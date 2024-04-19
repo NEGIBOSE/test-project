@@ -20,12 +20,12 @@
     <header class="header">
         <div class="title">Chara-Books</div>
         <div class="logout">
+          <a href="{{ route('register') }}">logout</a>
             
             @csrf
             </form>
         </div>
         <div class="signin">
-          <a href="{{ route('register') }}">logout</a>
         </div>
     </header>
     <main class="home">
