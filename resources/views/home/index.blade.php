@@ -25,6 +25,7 @@
             </form>
         </div>
         <div class="signin">
+          <a href="{{ route('register') }}">logout</a>
         </div>
     </header>
     <main class="home">
