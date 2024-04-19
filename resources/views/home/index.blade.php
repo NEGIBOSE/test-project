@@ -55,15 +55,15 @@
 <script>
     window.onload = function () {
         var images = [
-        "/images/picture1.png",
-        "/images/picture2.png",
-        "/images/picture3.png",
-        "/images/picture4.png",
-        "/images/picture5.png",
-        "/images/picture6.png",
-        "/images/picture7.png",
-        "/images/picture8.png",
-        "/images/picture9.png",
+        "./images/picture1.png",
+        "./images/picture2.png",
+        "./images/picture3.png",
+        "./images/picture4.png",
+        "./images/picture5.png",
+        "./images/picture6.png",
+        "./images/picture7.png",
+        "./images/picture8.png",
+        "./images/picture9.png",
     ];
 
   var randomIndex = Math.floor(Math.random() * images.length);
