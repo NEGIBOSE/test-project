@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 use App\Http\Controllers\Home\IndexController;
 
 
+//test
+Route::get('/test', [TestController::class, 'test'])->name('test');
 
 Route::get('/', function () {
     return view('welcome');

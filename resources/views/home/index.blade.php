@@ -25,8 +25,6 @@
             @csrf
             </form>
         </div>
-        <div class="signin">
-        </div>
     </header>
     <main class="home">
       <div class="home_upper"></div>
