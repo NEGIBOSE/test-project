@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title')->after('isbn');
             $table->string('author')->after('title');
             $table->string('thumbnail_url')->after('author');
+            $table->unsignedBigInteger('categories_id')->after('thumbnail_url');
+            $table->foreign('categories_id')->references('id')->on('categories'); //②
         });
     }
 
