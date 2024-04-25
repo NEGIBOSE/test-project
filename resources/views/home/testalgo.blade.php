@@ -33,6 +33,9 @@
 </head>
 <body>
 <h1>色を選択してください</h1>
+<p>同じ色を３回選択:スーパー"OO"くん</p>
+<p>2回同じ色選択 & 1回別の色:"Δ" 系 "OO" 人</p>
+
 <button class="button-red" onclick="selectColor('赤')">赤</button>
 <button class="button-blue" onclick="selectColor('青')">青</button>
 <button class="button-yellow" onclick="selectColor('黄色')">黄色</button>
