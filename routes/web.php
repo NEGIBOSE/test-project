@@ -68,3 +68,9 @@ Route::get('/home/growth', \App\Http\Controllers\Home\GrowthController::class)
 Route::get('/home/bookshelf', \App\Http\Controllers\Home\BookshelfController::class)
 ->name('home.bookshelf');
 
+//algorithm test
+use App\Http\Controllers\Home\TestalgoController;
+Route::get('/home/testalgo', \App\Http\Controllers\Home\TestalgoController::class)
+->name('home.testalgo');
+Route::post('/store', [TestalgoController::class, 'store']); // POSTリクエストを処理するルート
+Route::get('/get-image', [TestalgoController::class, 'getImage']); // GETリクエストを処理するルート
