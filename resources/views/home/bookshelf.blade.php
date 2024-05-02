@@ -14,17 +14,44 @@
 
     <!-- CSSファイルの読み込み -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    <style>
+      .search_input{
+        display:flex;
+      }
+      .search_input input{
+        width:70%;
+      }
+      .search_input button{
+        width:30%;
+      }
+      .bookshelf_middle{
+        width: 97%;
+        margin: 0 auto;
+        height: 80vh;
+        overflow:auto;
+      }
+      .bookshelf_contents {
+        display: flex;
+        flex-wrap: wrap; /* コンテンツが折り返されるように設定 */
+      }
 
+      .bookshelf_cont {
+        width: calc(33.33% - 10px); /* 3列に分割し、間隔を設定 */
+        margin: 5px; /* コンテンツの間隔を設定 */
+        box-sizing: border-box; /* マージンやパディングを含めた全体の幅を計算する */
+      }
+
+      .bookshelf_bottom {
+        width:100%;
+        display:flex;
+        justify-content:center;
+      }
+
+    </style>
   </head>
   <body>
     <header class="header">
         <div class="title">Chara-Books</div>
-        <div class="logout">
-          <a href="{{ route('register') }}">logout</a>
-            
-            @csrf
-            </form>
-        </div>
     </header>
     <main class="bookshelf">
       <div class="bookshelf_upper">
@@ -43,16 +70,49 @@
           </div>
         </div>
       </div>
-      <div class="bookshelf_bottom">
+      <div class="bookshelf_middle bg_gray">
         <ul class="bookshelf_contents">
-          <li class="bookshelf_cont"></li>
-          
           <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>
+          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>          <li class="bookshelf_cont">
             <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
           </li>
 
 
         </ul>
+      </div>
+      <div class="bookshelf_bottom">
+        <div class="select_text bg_yellow">
+              <a href="{{ route('home.index') }}">HOMEへ戻る</a>
+        </div>
+
       </div>
     </main>
     <footer>&copy; 2024 My portfolio</footer>
