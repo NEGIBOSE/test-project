@@ -34,6 +34,12 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
+//login
+Route::get('/home', function () {
+    // ここにユーザーがログイン後にリダイレクトされるページのコードを追加
+    return redirect()->route('home.index');
+})->middleware(['auth'])->name('home');
+
 //ホーム
 Route::get('/home', \App\Http\Controllers\Home\IndexController::class)
 ->name('home.index');

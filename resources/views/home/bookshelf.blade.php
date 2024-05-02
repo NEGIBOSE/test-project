@@ -27,7 +27,33 @@
         </div>
     </header>
     <main class="bookshelf">
-      
+      <div class="bookshelf_upper">
+        <div class="bookshelf_search">
+          <div class="search_input">
+            <input
+              type="text"
+              id="searchTerm"
+              placeholder="Search for a book..."
+              class="select_text"
+            />
+            <button onclick="searchBooks()" class="select_text">Search</button>
+          </div>
+          <div id="searchResults" class="searchResults">
+            <!-- 検索結果がここに表示されます -->
+          </div>
+        </div>
+      </div>
+      <div class="bookshelf_bottom">
+        <ul class="bookshelf_contents">
+          <li class="bookshelf_cont"></li>
+          
+          <li class="bookshelf_cont">
+            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
+          </li>
+
+
+        </ul>
+      </div>
     </main>
     <footer>&copy; 2024 My portfolio</footer>
     <!-- JavaScriptファイルの読み込み -->
