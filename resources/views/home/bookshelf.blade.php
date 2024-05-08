@@ -27,7 +27,8 @@
       .bookshelf_middle{
         width: 97%;
         margin: 0 auto;
-        height: 80vh;
+        padding:8px;
+        height: 100vh;
         overflow:auto;
       }
       .bookshelf_contents {
@@ -43,8 +44,9 @@
 
       .bookshelf_bottom {
         width:100%;
-        display:flex;
-        justify-content:center;
+      }
+      .select_text{
+        width:auto;
       }
 
     </style>
