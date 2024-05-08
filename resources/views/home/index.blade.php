@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="home_select_l select_text">
-          <a href="#">成長記録を見る</a>
+        <a href="{{ route('home.growth') }}">成長記録</a>
         </div>
       </div>
     </main>
