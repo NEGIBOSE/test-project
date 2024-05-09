@@ -42,7 +42,7 @@ public function destroy(Request $request): RedirectResponse
 
     $request->session()->regenerateToken();
 
-    return redirect('/'); // ログインページへリダイレクト
+    return redirect('/login'); // ログインページへリダイレクト
 }
 
 }
