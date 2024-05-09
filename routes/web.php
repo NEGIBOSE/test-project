@@ -80,3 +80,6 @@ Route::get('/home/testalgo', \App\Http\Controllers\Home\TestalgoController::clas
 ->name('home.testalgo');
 Route::post('/store', [TestalgoController::class, 'store']); // POSTリクエストを処理するルート
 Route::get('/get-image', [TestalgoController::class, 'getImage']); // GETリクエストを処理するルート
+
+//書籍情報
+Route::post('/books', 'BookController@store');
