@@ -320,7 +320,6 @@
     </main>
     <footer>&copy; 2024 My portfolio</footer>
     <!-- JavaScriptファイルの読み込み -->
-    <script src="{{ asset('js/app.js') }}"></script>
     <script>
       // 選択された本の画像URLを保持する変数
 let selectedImageUrl;
