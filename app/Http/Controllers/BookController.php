@@ -7,22 +7,23 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
-    public function store(Request $request)
+    public function saveBook(Request $request)
     {
-        // リクエストから書籍情報を取得
-        $title = $request->input('title');
-        $author = $request->input('author');
-        $thumbnailUrl = $request->input('thumbnail_url');
+        // バリデーション
+        $request->validate([
+            'imageUrl' => 'required|string',
+            'title' => 'required|string',
+            'author' => 'required|string', // author を必須項目として追加
+            'icon' => 'nullable|string', // アイコンがある場合
+        ]);
 
-        // Bookモデルを使ってデータベースに保存
+        // データベースに保存
         $book = new Book();
-        $book->title = $title;
-        $book->author = $author;
-        $book->thumbnail_url = $thumbnailUrl;
+        $book->thumbnail_url = $request->imageUrl;
+        $book->title = $request->title;
+        $book->author = $request->author; // 必須フィールドとして設定
         $book->save();
 
-        // 成功した場合の処理を追加する
-
-        return response()->json(['message' => 'Book created successfully'], 201);
+        return response()->json(['message' => 'Book saved successfully'], 201);
     }
 }

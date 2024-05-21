@@ -6,13 +6,20 @@ use App\Http\Controllers\TestController;
 
 use App\Http\Controllers\Home\IndexController;
 
+use App\Http\Controllers\BookController;
 
-//test
-Route::get('/test', [TestController::class, 'test'])->name('test');
+Route::post('/save-book', [BookController::class, 'saveBook']);
+
+// routes/web.php
+
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home'); // 名前付きルートの定義
+
+
+//test
+Route::get('/test', [TestController::class, 'test'])->name('test');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

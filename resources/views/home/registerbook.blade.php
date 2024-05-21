@@ -1,109 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chara-Books</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- CSSファイルの読み込み -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
- <style>
-    .register {
-  justify-content: space-between;
-}
-.register_upper {
-  display: flex;
-  flex-direction: column;
-}
-.register_upper .icon {
-  margin: 0 auto;
-  background: none;
-}
-#selectedTitle {
-  font-size: 16px;
-}
-.register_middle {
-  display: flex;
-  justify-content: center;
-}
-.register_middle img {
-  height: 360px;
-  width: auto;
-}
-
- </style>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <style>
+        .register {
+            justify-content: space-between;
+        }
+        .register_upper {
+            display: flex;
+            flex-direction: column;
+        }
+        .register_upper .icon {
+            margin: 0 auto;
+            background: none;
+        }
+        #selectedTitle {
+            font-size: 16px;
+        }
+        .register_middle {
+            display: flex;
+            justify-content: center;
+        }
+        .register_middle img {
+            height: 360px;
+            width: auto;
+        }
+    </style>
 </head>
-  <body>
+<body>
     <header class="header bg_red">
-      <div class="title">Chara-Books</div>
+        <div class="title">Chara-Books</div>
     </header>
     <main class="register bg_red">
-      <div class="register_upper">
-        <div class="mini_title">
-          <p class="select_text">この本を読み聞かせますか？</p>
+        <div class="register_upper">
+            <div class="mini_title">
+                <p class="select_text">この本を読み聞かせますか？</p>
+            </div>
+            <!-- アイコンの呼び出し -->
+            <div class="icon">
+                <div id="selectedIconContainer"></div>
+            </div>
+            <div class="mini_title">
+                <p id="selectedTitle" class="select_text">本のタイトル</p>
+            </div>
         </div>
-        <!-- アイコンの呼び出し -->
-        <div class="icon">
-          <div id="selectedIconContainer"></div>
+        <!-- 画像の呼び出し -->
+        <div class="register_middle">
+            <img id="selectedImage" src="" alt="Selected Book Image">
         </div>
-        <div class="mini_title">
-          <p id="selectedTitle" class="select_text">本のタイトル</p>
+        <div class="register_lower">
+            <div class="home_select_u">
+                <div class="select_text bg_red">
+                    <a href="{{ route('home.reading') }}" id="yesLink">はい</a>
+                </div>
+                <div class="select_text bg_yellow">
+                    <a href="{{ route('home.search') }}">いいえ</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- 画像の呼び出し -->
-      <div class="register_middle">
-        <img id="selectedImage" src="" alt="Selected Book Image" />
-      </div>
-      <div class="register_lower">
-        <div class="home_select_u">
-          <div class="select_text bg_red">
-          <a href="{{ route('home.reading') }}">はい</a>
-          </div>
-          <div class="select_text bg_yellow">
-          <a href="{{ route('home.search') }}">いいえ</a>
-          </div>
-        </div>
-      </div>
     </main>
     <footer>&copy; 2024 My portfolio</footer>
-    <!-- JavaScriptファイルの読み込み -->
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
-    ></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script>
-        // セッションストレージから選択した本の画像の URL とタイトルを取得
-var selectedImageUrl = sessionStorage.getItem("selectedImageUrl");
-var selectedTitle = sessionStorage.getItem("selectedTitle");
+        document.addEventListener("DOMContentLoaded", function () {
+            var selectedImageUrl = sessionStorage.getItem("selectedImageUrl");
+            var selectedTitle = sessionStorage.getItem("selectedTitle");
+            var selectedAuthor = sessionStorage.getItem("selectedAuthor"); // 新しいフィールドを追加
 
-// 画像を表示する要素のIDを取得し、選択した本の画像のURLを設定
-var selectedImage = document.getElementById("selectedImage");
-selectedImage.src = selectedImageUrl;
+            // 画像を表示する要素のIDを取得し、選択した本の画像のURLを設定
+            var selectedImage = document.getElementById("selectedImage");
+            selectedImage.src = selectedImageUrl;
 
-// タイトルを表示する要素のIDを取得し、選択した本のタイトルを設定
-var titleElement = document.getElementById("selectedTitle");
-titleElement.textContent = selectedTitle;
+            // タイトルを表示する要素のIDを取得し、選択した本のタイトルを設定
+            var titleElement = document.getElementById("selectedTitle");
+            titleElement.textContent = selectedTitle;
 
-document.addEventListener("DOMContentLoaded", function () {
-  // セッションストレージから選択したアイコンを取得
-  var selectedIcon = sessionStorage.getItem("selectedIcon");
-  if (selectedIcon) {
-    // アイコンを表示する要素を取得
-    var iconContainer = document.getElementById("selectedIconContainer");
-    console.log(iconContainer); // iconContainerが正しく取得されていることを確認
+            // セッションストレージから選択したアイコンを取得
+            var selectedIcon = sessionStorage.getItem("selectedIcon");
+            if (selectedIcon) {
+                var iconContainer = document.getElementById("selectedIconContainer");
+                iconContainer.innerHTML = selectedIcon;
+            }
 
-    // セッションストレージから保存されたSVGの内容を取得して表示する
-    iconContainer.innerHTML = selectedIcon;
-  }
-});
+            var yesLink = document.getElementById("yesLink");
+            yesLink.addEventListener("click", function (event) {
+                event.preventDefault(); // デフォルトのリンク動作をキャンセル
+                sendDataToServer(); // データをサーバーに送信する関数を呼び出す
+            });
+        });
 
+        function sendDataToServer() {
+            var selectedImageUrl = sessionStorage.getItem("selectedImageUrl");
+            var selectedTitle = sessionStorage.getItem("selectedTitle");
+            var selectedAuthor = sessionStorage.getItem("selectedAuthor"); // 新しいフィールドを追加
+            var selectedIcon = sessionStorage.getItem("selectedIcon");
+
+            var saveSelectedBookUrl = 'http://127.0.0.1:8000/save-book'; // バックエンドのエンドポイントURL
+
+            var requestData = {
+                imageUrl: selectedImageUrl,
+                title: selectedTitle,
+                author: selectedAuthor, // 新しいフィールドを追加
+                icon: selectedIcon
+            };
+
+            var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            fetch(saveSelectedBookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken // CSRFトークンをヘッダーに追加
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Selected book data sent successfully');
+                    window.location.href = "{{ route('home.reading') }}"; // 成功したらリンク先に移動
+                } else {
+                    console.error('Failed to send selected book data');
+                }
+            })
+            .catch(error => {
+                console.error('Error while sending selected book data:', error);
+            });
+        }
     </script>
-  </body>
+</body>
 </html>
