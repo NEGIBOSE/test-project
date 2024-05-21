@@ -10,16 +10,16 @@ return new class extends Migration {
      */
     public function up(): void {
         Schema::table('books', function (Blueprint $table) {
-            $table->string('isbn')->default('')->change();
-        });
+            // isbnカラムを削除
+            $table->dropColumn('isbn');
+            // authorカラムを削除
+            $table->dropColumn('author');        });
     }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::table('books', function (Blueprint $table) {
-            $table->string('isbn')->default(null)->change();
-        });
+
     }
 };
