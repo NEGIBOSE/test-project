@@ -8,6 +8,9 @@ use App\Http\Controllers\Home\IndexController;
 
 use App\Http\Controllers\BookController;
 
+use App\Http\Controllers\PostController;
+Route::get('post/create', [PostController::class, 'create']);
+
 Route::post('/save-book', [BookController::class, 'saveBook']);
 
 // routes/web.php
