@@ -58,7 +58,10 @@
         <div class="register_lower">
             <div class="home_select_u">
                 <div class="select_text bg_red">
-                    <a href="{{ route('home.reading') }}" id="yesLink">はい</a>
+                    <form id="bookForm" method="POST" action="{{ route('book.store') }}">
+                        @csrf
+                        <button type="submit" id="yesButton">はい</button>
+                    </form>
                 </div>
                 <div class="select_text bg_yellow">
                     <a href="{{ route('home.search') }}">いいえ</a>
@@ -69,70 +72,65 @@
     <footer>&copy; 2024 My portfolio</footer>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var selectedImageUrl = sessionStorage.getItem("selectedImageUrl");
-            var selectedTitle = sessionStorage.getItem("selectedTitle");
-            var selectedAuthor = sessionStorage.getItem("selectedAuthor"); // 新しいフィールドを追加
+    document.addEventListener("DOMContentLoaded", function () {
+        var selectedImageUrl = sessionStorage.getItem("selectedImageUrl");
+        var selectedTitle = sessionStorage.getItem("selectedTitle");
 
-            // 画像を表示する要素のIDを取得し、選択した本の画像のURLを設定
-            var selectedImage = document.getElementById("selectedImage");
-            selectedImage.src = selectedImageUrl;
+        // 画像を表示する要素のIDを取得し、選択した本の画像のURLを設定
+        var selectedImage = document.getElementById("selectedImage");
+        selectedImage.src = selectedImageUrl;
 
-            // タイトルを表示する要素のIDを取得し、選択した本のタイトルを設定
-            var titleElement = document.getElementById("selectedTitle");
-            titleElement.textContent = selectedTitle;
+        // タイトルを表示する要素のIDを取得し、選択した本のタイトルを設定
+        var titleElement = document.getElementById("selectedTitle");
+        titleElement.textContent = selectedTitle;
 
-            // セッションストレージから選択したアイコンを取得
-            var selectedIcon = sessionStorage.getItem("selectedIcon");
-            if (selectedIcon) {
-                var iconContainer = document.getElementById("selectedIconContainer");
-                iconContainer.innerHTML = selectedIcon;
-            }
-
-            var yesLink = document.getElementById("yesLink");
-            yesLink.addEventListener("click", function (event) {
-                event.preventDefault(); // デフォルトのリンク動作をキャンセル
-                sendDataToServer(); // データをサーバーに送信する関数を呼び出す
-            });
-        });
-
-        function sendDataToServer() {
-            var selectedImageUrl = sessionStorage.getItem("selectedImageUrl");
-            var selectedTitle = sessionStorage.getItem("selectedTitle");
-            var selectedAuthor = sessionStorage.getItem("selectedAuthor"); // 新しいフィールドを追加
-            var selectedIcon = sessionStorage.getItem("selectedIcon");
-
-            var saveSelectedBookUrl = 'http://127.0.0.1:8000/save-book'; // バックエンドのエンドポイントURL
-
-            var requestData = {
-                imageUrl: selectedImageUrl,
-                title: selectedTitle,
-                author: selectedAuthor, // 新しいフィールドを追加
-                icon: selectedIcon
-            };
-
-            var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-            fetch(saveSelectedBookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken // CSRFトークンをヘッダーに追加
-                },
-                body: JSON.stringify(requestData)
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Selected book data sent successfully');
-                    window.location.href = "{{ route('home.reading') }}"; // 成功したらリンク先に移動
-                } else {
-                    console.error('Failed to send selected book data');
-                }
-            })
-            .catch(error => {
-                console.error('Error while sending selected book data:', error);
-            });
+        // セッションストレージから選択したアイコンを取得
+        var selectedIcon = sessionStorage.getItem("selectedIcon");
+        if (selectedIcon) {
+            var iconContainer = document.getElementById("selectedIconContainer");
+            iconContainer.innerHTML = selectedIcon;
         }
+
+        var bookForm = document.getElementById("bookForm");
+        bookForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // デフォルトのフォーム送信をキャンセル
+            sendDataToServer(); // データをサーバーに送信する関数を呼び出す
+        });
+    });
+
+    function sendDataToServer() {
+        var selectedImageUrl = sessionStorage.getItem("selectedImageUrl");
+        var selectedTitle = sessionStorage.getItem("selectedTitle");
+        var selectedIcon = sessionStorage.getItem("selectedIcon");
+
+        var requestData = {
+            selectedImageUrl: selectedImageUrl,
+            selectedTitle: selectedTitle,
+            selectedIcon: selectedIcon
+        };
+
+        var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        fetch("{{ route('book.store') }}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken // CSRFトークンをヘッダーに追加
+            },
+            body: JSON.stringify(requestData)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Selected book data sent successfully');
+                window.location.href = "{{ route('home.reading') }}"; // 成功したらリンク先に移動
+            } else {
+                console.error('Failed to send selected book data');
+            }
+        })
+        .catch(error => {
+            console.error('Error while sending selected book data:', error);
+        });
+    }
     </script>
 </body>
 </html>

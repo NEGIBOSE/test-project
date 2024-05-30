@@ -6,17 +6,17 @@ use App\Http\Controllers\TestController;
 
 use App\Http\Controllers\Home\IndexController;
 
+//save-book
 use App\Http\Controllers\BookController;
+Route::get('post/save-book', [BookController::class, 'create']);
+Route::post('post/save-book', [BookController::class, 'store'])
+->name('book.store');
 
+//post
 use App\Http\Controllers\PostController;
 Route::get('post/create', [PostController::class, 'create']);
 Route::post('post', [PostController::class, 'store'])
 ->name('post.store');
-
-Route::post('/save-book', [BookController::class, 'saveBook']);
-
-// routes/web.php
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -63,7 +63,7 @@ Route::post('/save-book-data', 'BookController@saveBookData');
 
 
 //登録
-Route::get('/home/register', \App\Http\Controllers\Home\RegisterbookController::class)
+Route::get('/home/registerbook', \App\Http\Controllers\Home\RegisterbookController::class)
 ->name('home.registerbook');
 
 //読み聞かせ中
@@ -92,6 +92,3 @@ Route::get('/home/testalgo', \App\Http\Controllers\Home\TestalgoController::clas
 ->name('home.testalgo');
 Route::post('/store', [TestalgoController::class, 'store']); // POSTリクエストを処理するルート
 Route::get('/get-image', [TestalgoController::class, 'getImage']); // GETリクエストを処理するルート
-
-//書籍情報
-Route::post('/books', 'BookController@store');

@@ -7,23 +7,28 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
-    public function saveBook(Request $request)
+    public function create()
+    {
+        // リソース作成用のフォームを表示するビューを返す
+        return view('post.save-book');
+    }
+
+    public function store(Request $request)
     {
         // バリデーション
         $request->validate([
-            'imageUrl' => 'required|string',
-            'title' => 'required|string',
-            'author' => 'required|string', // author を必須項目として追加
-            'icon' => 'nullable|string', // アイコンがある場合
+            'selectedImageUrl' => 'required|string',
+            'selectedTitle' => 'required|string',
+            'selectedIcon' => 'nullable|string', // アイコンがある場合
         ]);
 
         // データベースに保存
         $book = new Book();
-        $book->thumbnail_url = $request->imageUrl;
-        $book->title = $request->title;
-        $book->author = $request->author; // 必須フィールドとして設定
+        $book->thumbnail_url = $request->selectedImageUrl;
+        $book->title = $request->selectedTitle;
         $book->save();
 
+        // リダイレクトまたはレスポンスを返す
         return response()->json(['message' => 'Book saved successfully'], 201);
     }
 }
