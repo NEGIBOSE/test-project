@@ -12,6 +12,12 @@ Route::get('post/save-book', [BookController::class, 'create']);
 Route::post('post/save-book', [BookController::class, 'store'])
 ->name('book.store');
 
+//save-category
+use App\Http\Controllers\CategoryController;
+Route::get('post/save-category', [CategoryController::class, 'create']);
+Route::post('post/save-category', [CategoryController::class, 'store'])
+->name('category.store');
+
 //post
 use App\Http\Controllers\PostController;
 Route::get('post/create', [PostController::class, 'create']);
