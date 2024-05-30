@@ -99,38 +99,64 @@
     });
 
     function sendDataToServer() {
-        var selectedImageUrl = sessionStorage.getItem("selectedImageUrl");
-        var selectedTitle = sessionStorage.getItem("selectedTitle");
-        var selectedIcon = sessionStorage.getItem("selectedIcon");
+    var selectedImageUrl = sessionStorage.getItem("selectedImageUrl");
+    var selectedTitle = sessionStorage.getItem("selectedTitle");
+    var selectedIcon = sessionStorage.getItem("selectedIcon");
 
-        var requestData = {
-            selectedImageUrl: selectedImageUrl,
-            selectedTitle: selectedTitle,
-            selectedIcon: selectedIcon
-        };
+    // selectedIcon のみ category.store に保存するデータ
+    var categoryData = {
+        selectedIcon: selectedIcon
+    };
 
-        var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    // selectedTitle と selectedImageUrl を book.store に保存するデータ
+    var bookData = {
+        selectedTitle: selectedTitle,
+        selectedImageUrl: selectedImageUrl
+    };
 
-        fetch("{{ route('book.store') }}", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': csrfToken // CSRFトークンをヘッダーに追加
-            },
-            body: JSON.stringify(requestData)
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Selected book data sent successfully');
-                //window.location.href = "{{ route('home.reading') }}"; // 成功したらリンク先に移動
-            } else {
-                console.error('Failed to send selected book data');
-            }
-        })
-        .catch(error => {
-            console.error('Error while sending selected book data:', error);
-        });
-    }
+    var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    // category.store へのリクエスト
+    fetch("{{ route('category.store') }}", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrfToken
+        },
+        body: JSON.stringify(categoryData)
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Selected icon sent to category.store successfully');
+        } else {
+            console.error('Failed to send selected icon to category.store');
+        }
+    })
+    .catch(error => {
+        console.error('Error while sending selected icon to category.store:', error);
+    });
+
+    // book.store へのリクエスト
+    fetch("{{ route('book.store') }}", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrfToken
+        },
+        body: JSON.stringify(bookData)
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Selected title and image url sent to book.store successfully');
+            //window.location.href = "{{ route('home.reading') }}"; // 成功したらリンク先に移動
+        } else {
+            console.error('Failed to send selected title and image url to book.store');
+        }
+    })
+    .catch(error => {
+        console.error('Error while sending selected title and image url to book.store:', error);
+    });
+}
     </script>
 </body>
 </html>

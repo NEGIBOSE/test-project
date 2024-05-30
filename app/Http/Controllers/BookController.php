@@ -19,7 +19,6 @@ class BookController extends Controller
         $request->validate([
             'selectedImageUrl' => 'required|string',
             'selectedTitle' => 'required|string',
-            'selectedIcon' => 'nullable|string', // アイコンがある場合
         ]);
 
         // データベースに保存

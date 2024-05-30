@@ -23,7 +23,7 @@ class CategoryController extends Controller
         // データベースに保存
         $category = new Category();
         $category->mark = $request->selectedIcon;
-        $book->save();
+        $category->save();
 
         // リダイレクトまたはレスポンスを返す
         return response()->json(['message' => 'category saved successfully'], 201);

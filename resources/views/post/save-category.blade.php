@@ -11,10 +11,6 @@
     <form method="POST" action="{{ route('category.store') }}">
         @csrf
         <div>
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title">
-        </div>
-        <div>
             <label for="mark">mark:</label>
             <input type="text" id="mark" name="mark">
         </div>
