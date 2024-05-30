@@ -20,8 +20,6 @@ return new class extends Migration {
     public function down(): void {
         Schema::table('books', function (Blueprint $table) {
             
-            // カラムを削除（必要に応じて）
-            $table->dropColumn('categories_id');
         });
     }
 };
