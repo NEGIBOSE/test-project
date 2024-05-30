@@ -59,7 +59,6 @@ Route::get('/home', \App\Http\Controllers\Home\IndexController::class)
 //検索
 Route::get('/home/search', \App\Http\Controllers\Home\SearchController::class)
 ->name('home.search');
-Route::post('/save-book-data', 'BookController@saveBookData');
 
 
 //登録
