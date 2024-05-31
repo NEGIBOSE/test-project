@@ -18,6 +18,9 @@ Route::get('post/save-category', [CategoryController::class, 'create']);
 Route::post('post/save-category', [CategoryController::class, 'store'])
 ->name('category.store');
 
+//bookshelf表示
+Route::get('home/bookshelf', [BookController::class, 'index'])->name('bookshelf.index');
+
 //post
 use App\Http\Controllers\PostController;
 Route::get('post/create', [PostController::class, 'create']);
@@ -87,10 +90,6 @@ Route::get('/home/share', \App\Http\Controllers\Home\ShareController::class)
 //成長記録
 Route::get('/home/growth', \App\Http\Controllers\Home\GrowthController::class)
 ->name('home.growth');
-
-//本棚
-Route::get('/home/bookshelf', \App\Http\Controllers\Home\BookshelfController::class)
-->name('home.bookshelf');
 
 //algorithm test
 use App\Http\Controllers\Home\TestalgoController;

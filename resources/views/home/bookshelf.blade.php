@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chara-Books</title>
@@ -12,46 +12,42 @@
       rel="stylesheet"
     />
 
-    <!-- CSSファイルの読み込み -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
-      .search_input{
-        display:flex;
+      .search_input {
+        display: flex;
       }
-      .search_input input{
-        width:70%;
+      .search_input input {
+        width: 70%;
       }
-      .search_input button{
-        width:30%;
+      .search_input button {
+        width: 30%;
       }
-      .bookshelf_middle{
+      .bookshelf_middle {
         width: 97%;
         margin: 0 auto;
-        padding:8px;
+        padding: 8px;
         height: 100vh;
-        overflow:auto;
+        overflow: auto;
       }
       .bookshelf_contents {
         display: flex;
-        flex-wrap: wrap; /* コンテンツが折り返されるように設定 */
+        flex-wrap: wrap;
       }
-
       .bookshelf_cont {
-        width: calc(33.33% - 10px); /* 3列に分割し、間隔を設定 */
-        margin: 5px; /* コンテンツの間隔を設定 */
-        box-sizing: border-box; /* マージンやパディングを含めた全体の幅を計算する */
+        width: calc(33.33% - 10px);
+        margin: 5px;
+        box-sizing: border-box;
       }
-
       .bookshelf_bottom {
-        width:100%;
+        width: 100%;
       }
-      .select_text{
-        width:auto;
+      .select_text {
+        width: auto;
       }
-
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header class="header">
         <div class="title">Chara-Books</div>
     </header>
@@ -73,55 +69,29 @@
         </div>
       </div>
       <div class="bookshelf_middle bg_gray">
+        <pre>
+          @php
+            print_r($books);
+          @endphp
+        </pre>
         <ul class="bookshelf_contents">
-          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>
-          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>          <li class="bookshelf_cont">
-            <img src="{{ asset('images/harry_potter.jpg') }}" alt="">
-          </li>
-
-
+          @foreach($books as $book)
+            <li class="bookshelf_cont">
+              <img src="{{ $book->thumbnail_url }}" alt="{{ $book->title }}">
+            </li>
+          @endforeach
         </ul>
       </div>
       <div class="bookshelf_bottom">
         <div class="select_text bg_yellow">
               <a href="{{ route('home.index') }}">HOMEへ戻る</a>
         </div>
-
       </div>
     </main>
     <footer>&copy; 2024 My portfolio</footer>
-    <!-- JavaScriptファイルの読み込み -->
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
     ></script>
-  </body>
+</body>
 </html>
