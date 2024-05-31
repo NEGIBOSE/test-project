@@ -148,7 +148,7 @@
     .then(response => {
         if (response.ok) {
             console.log('Selected title and image url sent to book.store successfully');
-            //window.location.href = "{{ route('home.reading') }}"; // 成功したらリンク先に移動
+            window.location.href = "{{ route('home.reading') }}"; // 成功したらリンク先に移動
         } else {
             console.error('Failed to send selected title and image url to book.store');
         }
