@@ -12,12 +12,16 @@ class PostController extends Controller
     }
 
     public function store(Request $request){
-
         $post = Post::create([
             'title' => $request->title,
             'body' => $request->body
         ]);
         $request->session()->flash('message', '保存しました');
         return back();
+    }
+
+    public function index(){
+        $posts=Post::all();
+        return view('post.index', compact('posts'));
     }
 }
