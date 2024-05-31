@@ -63,6 +63,13 @@
             />
             <button onclick="searchBooks()" class="select_text">Search</button>
           </div>
+          <div>
+            <select id="sortOrder" onchange="searchBooks()">
+              <option value="latest">新しい順</option>
+              <option value="oldest">古い順</option>
+              <option value="name">名前順</option>
+            </select>
+          </div>
           <div id="searchResults" class="searchResults">
             <!-- 検索結果がここに表示されます -->
           </div>
@@ -92,7 +99,8 @@
     <script>
       function searchBooks() {
         const searchTerm = document.getElementById('searchTerm').value;
-        fetch(`{{ route('books.search') }}?query=${searchTerm}`)
+        const sortOrder = document.getElementById('sortOrder').value;
+        fetch(`{{ route('books.search') }}?query=${searchTerm}&sort=${sortOrder}`)
           .then(response => response.json())
           .then(data => {
             const bookshelfContents = document.getElementById('bookshelfContents');

@@ -1,6 +1,5 @@
 <?php
 
-// BookController.php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -37,7 +36,20 @@ class BookController extends Controller
     public function searchBooks(Request $request)
     {
         $query = $request->input('query');
-        $books = Book::where('title', 'LIKE', "%{$query}%")->get();
+        $sort = $request->input('sort', 'latest');
+
+        $books = Book::where('title', 'like', '%' . $query . '%');
+
+        if ($sort == 'latest') {
+            $books = $books->orderBy('created_at', 'desc');
+        } elseif ($sort == 'oldest') {
+            $books = $books->orderBy('created_at', 'asc');
+        } elseif ($sort == 'name') {
+            $books = $books->orderBy('title', 'asc');
+        }
+
+        $books = $books->get();
+
         return response()->json($books);
     }
 }
