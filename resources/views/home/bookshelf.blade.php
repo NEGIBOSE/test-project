@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="bookshelf_middle bg_gray">
-        <ul class="bookshelf_contents">
+        <ul class="bookshelf_contents" id="bookshelfContents">
           @foreach($books as $book)
             <li class="bookshelf_cont">
               <img src="{{ $book->thumbnail_url }}" alt="{{ $book->title }}">
@@ -89,5 +89,26 @@
       defer
       src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
     ></script>
+    <script>
+      function searchBooks() {
+        const searchTerm = document.getElementById('searchTerm').value;
+        fetch(`{{ route('books.search') }}?query=${searchTerm}`)
+          .then(response => response.json())
+          .then(data => {
+            const bookshelfContents = document.getElementById('bookshelfContents');
+            bookshelfContents.innerHTML = '';
+            data.forEach(book => {
+              const bookItem = document.createElement('li');
+              bookItem.classList.add('bookshelf_cont');
+              bookItem.innerHTML = `
+                <img src="${book.thumbnail_url}" alt="${book.title}">
+                <p>${book.title}</p>
+              `;
+              bookshelfContents.appendChild(bookItem);
+            });
+          })
+          .catch(error => console.error('Error:', error));
+      }
+    </script>
 </body>
 </html>

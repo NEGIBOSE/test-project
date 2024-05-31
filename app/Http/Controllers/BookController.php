@@ -1,5 +1,6 @@
 <?php
 
+// BookController.php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -31,5 +32,12 @@ class BookController extends Controller
     {
         $books = Book::all();
         return view('home.bookshelf', compact('books'));
+    }
+
+    public function searchBooks(Request $request)
+    {
+        $query = $request->input('query');
+        $books = Book::where('title', 'LIKE', "%{$query}%")->get();
+        return response()->json($books);
     }
 }

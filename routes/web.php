@@ -20,6 +20,7 @@ Route::post('post/save-category', [CategoryController::class, 'store'])
 
 //bookshelf表示
 Route::get('home/bookshelf', [BookController::class, 'index'])->name('bookshelf.index');
+Route::get('home/search-books', [BookController::class, 'searchBooks'])->name('books.search');
 
 //post
 use App\Http\Controllers\PostController;
