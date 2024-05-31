@@ -69,15 +69,11 @@
         </div>
       </div>
       <div class="bookshelf_middle bg_gray">
-        <pre>
-          @php
-            print_r($books);
-          @endphp
-        </pre>
         <ul class="bookshelf_contents">
           @foreach($books as $book)
             <li class="bookshelf_cont">
               <img src="{{ $book->thumbnail_url }}" alt="{{ $book->title }}">
+              <p>{{ $book->title }}</p>
             </li>
           @endforeach
         </ul>
