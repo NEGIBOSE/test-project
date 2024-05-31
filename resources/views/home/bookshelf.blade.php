@@ -65,8 +65,8 @@
           </div>
           <div>
             <select id="sortOrder" onchange="searchBooks()">
-              <option value="latest">新しい順</option>
               <option value="oldest">古い順</option>
+              <option value="latest">新しい順</option>
               <option value="name">名前順</option>
             </select>
           </div>
