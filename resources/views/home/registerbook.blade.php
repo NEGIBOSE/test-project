@@ -103,31 +103,42 @@
     var selectedTitle = sessionStorage.getItem("selectedTitle");
     var selectedIcon = sessionStorage.getItem("selectedIcon");
 
-    // selectedIcon のみ category.store に保存するデータ
-    var categoryData = {
-        selectedIcon: selectedIcon
-    };
-
-    // selectedTitle と selectedImageUrl を book.store に保存するデータ
-    var bookData = {
-        selectedTitle: selectedTitle,
-        selectedImageUrl: selectedImageUrl
-    };
-
     var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    // category.store へのリクエスト
     fetch("{{ route('category.store') }}", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': csrfToken
         },
-        body: JSON.stringify(categoryData)
+        body: JSON.stringify({selectedIcon: selectedIcon})
     })
-    .then(response => {
-        if (response.ok) {
-            console.log('Selected icon sent to category.store successfully');
+    .then(response => response.json())
+    .then(categoryData => {
+        if (categoryData.category_id) {
+            fetch("{{ route('book.store') }}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: JSON.stringify({
+                    selectedImageUrl: selectedImageUrl,
+                    selectedTitle: selectedTitle,
+                    categoryId: categoryData.category_id  // 外部キーとしてカテゴリIDを使用
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Selected title and image url sent to book.store successfully');
+                    window.location.href = "{{ route('home.reading') }}";  // 成功したらリンク先に移動
+                } else {
+                    console.error('Failed to send selected title and image url to book.store');
+                }
+            })
+            .catch(error => {
+                console.error('Error while sending selected title and image url to book.store:', error);
+            });
         } else {
             console.error('Failed to send selected icon to category.store');
         }
@@ -135,28 +146,8 @@
     .catch(error => {
         console.error('Error while sending selected icon to category.store:', error);
     });
-
-    // book.store へのリクエスト
-    fetch("{{ route('book.store') }}", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': csrfToken
-        },
-        body: JSON.stringify(bookData)
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log('Selected title and image url sent to book.store successfully');
-            window.location.href = "{{ route('home.reading') }}"; // 成功したらリンク先に移動
-        } else {
-            console.error('Failed to send selected title and image url to book.store');
-        }
-    })
-    .catch(error => {
-        console.error('Error while sending selected title and image url to book.store:', error);
-    });
 }
+
     </script>
 </body>
 </html>

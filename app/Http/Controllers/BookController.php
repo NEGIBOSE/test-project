@@ -1,5 +1,6 @@
 <?php
 
+// app/Http/Controllers/BookController.php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -17,19 +18,21 @@ class BookController extends Controller
         $request->validate([
             'selectedImageUrl' => 'required|string',
             'selectedTitle' => 'required|string',
+            'categoryId' => 'required|exists:categories,id',  // カテゴリIDのバリデーション
         ]);
 
-        $book = new Book();
-        $book->thumbnail_url = $request->selectedImageUrl;
-        $book->title = $request->selectedTitle;
-        $book->save();
+        $book = Book::create([
+            'thumbnail_url' => $request->selectedImageUrl,
+            'title' => $request->selectedTitle,
+            'category_id' => $request->categoryId,  // カテゴリIDを保存
+        ]);
 
         return response()->json(['message' => 'Book saved successfully'], 201);
     }
 
     public function index()
     {
-        $books = Book::all();
+        $books = Book::with('category')->get();
         return view('home.bookshelf', compact('books'));
     }
 
