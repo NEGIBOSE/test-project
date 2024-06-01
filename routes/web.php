@@ -4,8 +4,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 
-use App\Http\Controllers\Home\IndexController;
-
 //save-book
 use App\Http\Controllers\BookController;
 Route::get('post/save-book', [BookController::class, 'create']);
@@ -21,6 +19,10 @@ Route::post('post/save-category', [CategoryController::class, 'store'])
 //bookshelf表示
 Route::get('home/bookshelf', [BookController::class, 'index'])->name('home.bookshelf');
 Route::get('/search-books', [BookController::class, 'searchBooks'])->name('books.search');
+
+//ホーム
+use App\Http\Controllers\Home\IndexController;
+Route::get('/home', IndexController::class)->name('home.index');
 
 //post
 use App\Http\Controllers\PostController;
@@ -61,11 +63,6 @@ Route::get('language/{locale}', function ($locale) {
 Route::get('/home', function () {
     return view('home'); // 'home'は適切なビュー名に置き換えてください
 });
-
-
-//ホーム
-Route::get('/home', \App\Http\Controllers\Home\IndexController::class)
-->name('home.index');
 
 //検索
 Route::get('/home/search', \App\Http\Controllers\Home\SearchController::class)
