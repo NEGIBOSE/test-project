@@ -10,6 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    <style>
+      .home_icon {
+        display:flex;
+      }
+      .home_icon svg{
+        width: 28px;
+      }
+    </style>
 </head>
 <body>
 <header class="header">
