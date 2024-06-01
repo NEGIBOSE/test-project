@@ -1,17 +1,17 @@
 <?php
 
+// app/Http/Controllers/Home/IndexController.php
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class IndexController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-        return view('home.index');
+        $categories = Category::all();
+        return view('home.index', compact('categories'));
     }
 }
