@@ -62,8 +62,8 @@ Route::get('/home/search', \App\Http\Controllers\Home\SearchController::class)
 ->name('home.search');
 
 //登録
-Route::get('/home/registerbook', \App\Http\Controllers\Home\RegisterbookController::class)
-->name('home.registerbook');
+Route::get('/home/registerbook', [CategoryController::class, 'showCategoryCount'])
+    ->name('home.registerbook');
 
 //読み聞かせ中
 Route::get('/home/reading', \App\Http\Controllers\Home\ReadingController::class)
