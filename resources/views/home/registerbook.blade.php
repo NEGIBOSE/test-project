@@ -111,7 +111,7 @@
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': csrfToken
         },
-        body: JSON.stringify({selectedIcon: selectedIcon})
+        body: JSON.stringify({ selectedIcon: selectedIcon })
     })
     .then(response => response.json())
     .then(categoryData => {
@@ -125,13 +125,25 @@
                 body: JSON.stringify({
                     selectedImageUrl: selectedImageUrl,
                     selectedTitle: selectedTitle,
-                    categoryId: categoryData.category_id  // 外部キーとしてカテゴリIDを使用
+                    categoryId: categoryData.category_id
                 })
             })
             .then(response => {
                 if (response.ok) {
                     console.log('Selected title and image url sent to book.store successfully');
-                    window.location.href = "{{ route('home.reading') }}";  // 成功したらリンク先に移動
+
+                    // レスポンスが成功した場合に、ルートに基づいてリダイレクトする
+                    switch (categoryCountMessage) {
+                        case 'まだカテゴリーが登録されていません。(この本は初めての本です)':
+                            window.location.href = "{{ route('home.babyevolute') }}";
+                            break;
+                        case '現在、カテゴリーは1つだけ登録されています。（この本は2冊目です）':
+                            window.location.href = "{{ route('home.reading') }}";
+                            break;
+                        default:
+                            window.location.href = "{{ route('home.adultevolute') }}";
+                            break;
+                    }
                 } else {
                     console.error('Failed to send selected title and image url to book.store');
                 }

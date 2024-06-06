@@ -69,9 +69,13 @@ Route::get('/home/registerbook', [CategoryController::class, 'showCategoryCount'
 Route::get('/home/reading', \App\Http\Controllers\Home\ReadingController::class)
 ->name('home.reading');
 
-//進化
-Route::get('/home/evolute', \App\Http\Controllers\Home\EvoluteController::class)
-->name('home.evolute');
+//第一進化
+Route::get('/home/babyevolute', \App\Http\Controllers\Home\BabyEvoluteController::class)
+->name('home.babyevolute');
+
+//第二進化
+Route::get('/home/adultevolute', \App\Http\Controllers\Home\AdultEvoluteController::class)
+->name('home.adultevolute');
 
 //共有
 Route::get('/home/share', \App\Http\Controllers\Home\ShareController::class)
