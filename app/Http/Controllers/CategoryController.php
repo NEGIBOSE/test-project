@@ -27,11 +27,11 @@ class CategoryController extends Controller
     {
         $categoryCount = Category::count();
 
-        if ($categoryCount === 0) {
+        if ($categoryCount === 1) {
             return 'まだカテゴリーが登録されていません。(この本は初めての本です)';
-        } elseif ($categoryCount === 1) {
-            return '現在、カテゴリーは1つだけ登録されています。（この本は2冊目です）';
         } elseif ($categoryCount === 2) {
+            return '現在、カテゴリーは1つだけ登録されています。（この本は2冊目です）';
+        } elseif ($categoryCount === 3) {
             return '現在、カテゴリーは2つ登録されています。';
         } else {
             return '現在、カテゴリーは'.$categoryCount.'個登録されています。（この本で'.$categoryCount.'2冊目です）';
