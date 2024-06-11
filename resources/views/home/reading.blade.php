@@ -195,5 +195,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
     </script>
+    <script>
+    var categoryCountMessage = {!! json_encode($categoryCountMessage) !!};
+    console.log('Category Count Message:', categoryCountMessage);
+</script>
   </body>
 </html>

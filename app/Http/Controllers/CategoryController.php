@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function showCategoryCount()
     {
         $categoryCountMessage = $this->determineCategoryCount();
-        return view('home.registerbook')->with('categoryCountMessage', $categoryCountMessage);
+        return view('home.reading')->with('categoryCountMessage', $categoryCountMessage);
     }
 
     /**

@@ -62,11 +62,11 @@ Route::get('/home/search', \App\Http\Controllers\Home\SearchController::class)
 ->name('home.search');
 
 //登録
-Route::get('/home/registerbook', [CategoryController::class, 'showCategoryCount'])
+Route::get('/home/registerbook', \App\Http\Controllers\Home\RegisterbookController::class)
     ->name('home.registerbook');
 
 //読み聞かせ中
-Route::get('/home/reading', \App\Http\Controllers\Home\ReadingController::class)
+Route::get('/home/reading', [CategoryController::class, 'showCategoryCount'])
 ->name('home.reading');
 
 //第一進化
