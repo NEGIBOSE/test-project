@@ -107,11 +107,6 @@
     <script>
         window.onload = function () {
         var images = [
-        "/images/picture1.png",
-        "/images/picture2.png",
-        "/images/picture3.png",
-        "/images/picture4.png",
-        "/images/picture5.png",
         "/images/picture6.png",
         "/images/picture7.png",
         "/images/picture8.png",
@@ -187,8 +182,17 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   // 7秒後にindex.htmlに遷移する関数
   function redirectToNextPage() {
-    window.location.href = "{{ route('home.index') }}"; // 次のページへの遷移
-  }
+                    switch (categoryCountMessage) {
+                        case 'まだカテゴリーが登録されていません。(この本は初めての本です)':
+                            window.location.href = "{{ route('home.babyevolute') }}";
+                            break;
+                        case '現在、カテゴリーは1つだけ登録されています。（この本は2冊目です）':
+                            window.location.href = "{{ route('home.index') }}";
+                            break;
+                        default:
+                            window.location.href = "{{ route('home.adultevolute') }}";
+                            break;
+                    }  }
 
   // 7秒後にredirectToNextPage関数を実行
   setTimeout(redirectToNextPage, 7000); // ミリ秒単位で指定するため、7000ミリ秒＝7秒
