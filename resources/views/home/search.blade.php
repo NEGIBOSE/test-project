@@ -394,17 +394,22 @@ function createClickHandler(thumbnail, title) {
     selectedImageUrl = thumbnail; // 選択された本の画像URLを保持する
     sessionStorage.setItem("selectedTitle", selectedTitle); // タイトルをセッションストレージに保存
     sessionStorage.setItem("selectedImageUrl", selectedImageUrl); // 画像URLをセッションストレージに保存
+
     // ページ遷移せずに画像URLをregister.htmlに表示させる
     const registerImage = document.getElementById("registerImage");
-    registerImage.src = selectedImageUrl;
+    if (registerImage) {
+      registerImage.src = selectedImageUrl;
+    }
+
     // reading.htmlにも画像URLを引き渡す
     const readingImage = document.getElementById("readingImage");
-    readingImage.src = selectedImageUrl;
+    if (readingImage) {
+      readingImage.src = selectedImageUrl;
+    }
 
-    // サーバーにデータを送信
-    sendDataToServer(selectedImageUrl, selectedTitle);
   };
 }
+
 
 // タブの作成
 document.addEventListener("DOMContentLoaded", function () {
