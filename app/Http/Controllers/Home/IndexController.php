@@ -14,7 +14,7 @@ class IndexController extends Controller
     public function __invoke()
     {
         $categories = Category::all();
-        $illustrations = Illustration::all(); // Illustration モデルからすべてのデータを取得
-        return view('home.index', compact('categories', 'illustrations'));
+        $latestIllustration = Illustration::latest()->first(); // 最新の1件のIllustrationデータを取得
+        return view('home.index', compact('categories', 'latestIllustration'));
     }
 }

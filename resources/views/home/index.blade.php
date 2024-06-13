@@ -38,9 +38,11 @@
             @endforeach
         </div>
         <div class="home_pic">
-        @foreach($illustrations as $illustration)
-            <img src="{{ asset($illustration->image_url) }}" alt="Illustration Image" />
-        @endforeach
+        @if($latestIllustration)
+            <img src="{{ asset($latestIllustration->image_url) }}" alt="Illustration Image" />
+        @else
+            <p>最新のイラストはありません。</p>
+        @endif
     </div>
     </div>
     <div class="home_select">
