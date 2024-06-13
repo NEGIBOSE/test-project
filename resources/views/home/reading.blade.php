@@ -89,7 +89,7 @@
         <p id="comment" class="select_text fade-in-comment"></p>
       </div>
       <div class="reading_girl">
-      <img id="myImage" src="" alt="Image" />
+      <img id="myImage" src="{{ asset('/images/BABY.png') }}" alt="Image" />
       </div>
 
       <!-- 本画像 -->
