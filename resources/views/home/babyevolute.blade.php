@@ -14,14 +14,16 @@
     <style>
         .reading {
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* 画面全体の高さ */
         }
-        #comment {
-            display: none; /* 初期状態では非表示に設定 */
+        .mini_title {
+            margin-top: 10px;
         }
-        .reading .mini_title {
-            margin-top: 24%;
-        }
-        .reading .mini_title p {
+        .mini_title p {
             background: none;
         }
         /* コメントが徐々に現れるアニメーションの定義 */
@@ -33,17 +35,27 @@
                 opacity: 1; /* 終了時の透明度 */
             }
         }
+        @keyframes fadeOut {
+            0% {
+                opacity: 1; /* 開始時の透明度 */
+            }
+            100% {
+                opacity: 0; /* 終了時の透明度 */
+            }
+        }
         /* アニメーションを適用する要素 */
         .fade-in-comment {
             animation: fadeIn 1s ease-in; /* アニメーションを1秒かけて実行（イージングを使用） */
         }
-        .reading_girl {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 92%;
+        .fade-out-comment {
+            animation: fadeOut 1s ease-in; /* アニメーションを1秒かけて実行（イージングを使用） */
         }
+        .reading_girl {
+    position: relative; /* 相対配置コンテキストを設定 */
+    width: 92%;
+    text-align: center;
+    margin-top: -16px; /* 上方に16px移動 */
+}
         .reading_girl img {
             width: 100%;
             transition: opacity 0.5s ease-in-out; /* 画像の切り替えにフェードアニメーションを追加 */
@@ -67,7 +79,7 @@
             }
         }
         .fade-in-out {
-            animation: fadeInOut 1s linear infinite; /* 1秒ごとにフェードイン・アウトを繰り返す */
+            animation: fadeInOut 1s linear infinite; /* 1秒ごとにフェードイン・フェードアウトを繰り返す */
         }
         /* 初期画像の最後の1秒間に白いモヤをかけるためのアニメーション */
         @keyframes whiteMist {
@@ -91,12 +103,36 @@
             opacity: 0;
             animation: whiteMist 1s 9s linear forwards; /* 9秒後から1秒間かけて白モヤを表示 */
         }
+        /* 新しいテキストスタイル */
+        .text-container {
+    text-align: center;
+    position: absolute; /* absolute に設定 */
+    top: 16%; /* reading_girl の上方に16px配置 */
+    width: 100%;
+}
+
+        .text-container p {
+            font-size: 2rem;
+            color: black;
+            margin: 0;
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+        .fade-out {
+            animation: fadeOut 1s forwards;
+        }
     </style>
 </head>
 <body>
-    <main class="babyevolute bg_red">
-        <div class="mini_title">
-            <p id="comment" class="select_text fade-in-comment"></p>
+    <main class="babyevolute bg_red reading">
+        <div class="text-container">
+            <p id="text1">おやおや？</p>
+            <p id="text2">進化した！</p>
         </div>
         <div class="reading_girl">
             <!-- 対応する画像を表示するためのimg要素 -->
@@ -148,7 +184,7 @@
                         imagePlaceholder.src = imagePath;
                         imagePlaceholder.classList.remove("hidden");
                         imagePlaceholder.classList.add("visible");
-                    }, 500); // 0.2秒後に切り替え
+                    }, 500); // 0.5秒後に切り替え
 
                     // 10回交互に表示する処理
                     var count = 0;
@@ -171,12 +207,25 @@
                             // 切り替え中のフェード効果を適用
                             imagePlaceholder.classList.add("fade-in-out");
                         }
-                    }, 500); // 0.2秒ごとに実行
+                    }, 500); // 0.5秒ごとに実行
                 }
 
                 // 初期画像の表示を開始
                 blinkImage();
             }, 3000); // 3秒後に初期画像の表示を開始
+
+            // テキストの表示と非表示のタイミングを設定
+            setTimeout(function () {
+                document.getElementById('text1').classList.add('fade-in');
+            }, 3000); // 3秒後に「おやおや？」をフェードイン
+
+            setTimeout(function () {
+                document.getElementById('text1').classList.add('fade-out');
+            }, 7000); // 7秒後に「おやおや？」をフェードアウト
+
+            setTimeout(function () {
+                document.getElementById('text2').classList.add('fade-in');
+            }, 11000); // 11秒後に「進化した！」をフェードイン
 
             // Send the image URL to the backend
             fetch('/post/save-image', {
