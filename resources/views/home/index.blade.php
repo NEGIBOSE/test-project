@@ -41,7 +41,7 @@
         @if($latestIllustration)
             <img src="{{ asset($latestIllustration->image_url) }}" alt="Illustration Image" />
         @else
-            <p>最新のイラストはありません。</p>
+            <img src="{{ asset($defaultImage) }}" alt="Default Image" />
         @endif
     </div>
     </div>
