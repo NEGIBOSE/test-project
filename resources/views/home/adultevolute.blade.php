@@ -24,6 +24,7 @@
     </header>
     <main class="evolute bg_red">
       <div class="mini_title">
+        第二進化
         <p id="comment" class="select_text fade-in-comment"></p>
       </div>
       <div class="evolution_girl">
