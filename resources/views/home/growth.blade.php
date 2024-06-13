@@ -51,24 +51,14 @@
         
       </div>
       <div class="growth_middle bg_gray">
-        <ul class="growth_contents">
-          <li class="growth_cont">
-            <img src="{{ asset('images/picture1.png') }}" alt="">
-          </li>
-          <li class="growth_cont">
-            <img src="{{ asset('images/picture2.png') }}" alt="">
-          </li>
-          <li class="growth_cont">
-            <img src="{{ asset('images/picture3.png') }}" alt="">
-          </li>
-          <li class="growth_cont">
-            <img src="{{ asset('images/picture4.png') }}" alt="">
-          </li>
-          <li class="growth_cont">
-            <img src="{{ asset('images/picture5.png') }}" alt="">
-          </li>
-          
-        </ul>
+      <ul class="growth_contents">
+    @foreach ($illustrations as $illustration)
+    <li class="growth_cont">
+        <img src="{{ $illustration->image_url }}" alt="Illustration">
+    </li>
+    @endforeach
+</ul>
+
       </div>
       <div class="bookshelf_bottom">
         <div class="select_text bg_yellow">
