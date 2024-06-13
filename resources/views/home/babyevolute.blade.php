@@ -132,7 +132,7 @@
     <main class="babyevolute bg_red reading">
         <div class="text-container">
             <p id="text1">おやおや？</p>
-            <p id="text2">進化した！</p>
+            <p id="text2">成長した！</p>
         </div>
         <div class="reading_girl">
             <!-- 対応する画像を表示するためのimg要素 -->
@@ -243,6 +243,11 @@
             .catch((error) => {
                 console.error('Error storing image URL:', error);
             });
+            
+            // 14秒後にhome.indexに自動で移動する
+            setTimeout(function() {
+                window.location.href = "{{ route('home.index') }}"; // リダイレクト先のURLを指定する
+            }, 14000); // 14秒後にリダイレクトする
         });
     </script>
 
