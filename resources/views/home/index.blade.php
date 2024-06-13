@@ -38,8 +38,10 @@
             @endforeach
         </div>
         <div class="home_pic">
-            <img id="myImage" src="" alt="Image" />
-        </div>
+        @foreach($illustrations as $illustration)
+            <img src="{{ asset($illustration->image_url) }}" alt="Illustration Image" />
+        @endforeach
+    </div>
     </div>
     <div class="home_select">
         <div class="home_select_u">
