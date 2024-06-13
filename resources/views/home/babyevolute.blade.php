@@ -80,34 +80,52 @@
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // セッションストレージから選択したSVGを取得
-            var selectedIcon = sessionStorage.getItem("selectedIcon");
+document.addEventListener("DOMContentLoaded", function () {
+    // セッションストレージから選択したSVGを取得
+    var selectedIcon = sessionStorage.getItem("selectedIcon");
 
-            // 対応する画像のパス
-            var imagePath;
+    // 対応する画像のパス
+    var imagePath;
 
-            // セッションストレージから取得したSVGに応じて画像のパスを設定
-            if (selectedIcon.includes('#bf7fff')) {
-                imagePath = "/images/SF.png"; // SF.pngのパスを指定する
+    // セッションストレージから取得したSVGに応じて画像のパスを設定
+    if (selectedIcon.includes('#bf7fff')) {
+        imagePath = "/images/SF.png"; // SF.pngのパスを指定する
 
-            } else if (selectedIcon.includes('#7fbfff')) {
-                imagePath = "/images/NF.png"; // 7fbfffの場合、NF.pngを表示
+    } else if (selectedIcon.includes('#7fbfff')) {
+        imagePath = "/images/NF.png"; // 7fbfffの場合、NF.pngを表示
 
-            } else if (selectedIcon.includes('#ff7fbf')) {
-                imagePath = "/images/LOVE.png"; // ff7fbfの場合、LOVE.pngを表示
+    } else if (selectedIcon.includes('#ff7fbf')) {
+        imagePath = "/images/LOVE.png"; // ff7fbfの場合、LOVE.pngを表示
 
-            } else if (selectedIcon.includes('#FFD43B')) {
-                imagePath = "/images/LOUGH.png"; // FFD43Bがある場合、LOUGH.pngを表示
+    } else if (selectedIcon.includes('#FFD43B')) {
+        imagePath = "/images/LOUGH.png"; // FFD43Bがある場合、LOUGH.pngを表示
 
-            } else {
-                imagePath = "/images/HORROR.png"; // それ以外の場合、HORROR.pngのパスを指定する
-            }
+    } else {
+        imagePath = "/images/HORROR.png"; // それ以外の場合、HORROR.pngのパスを指定する
+    }
 
-            // 対応する画像を表示するためのimg要素
-            var imagePlaceholder = document.getElementById("imagePlaceholder");
-            imagePlaceholder.src = imagePath;
-        });
+    // 対応する画像を表示するためのimg要素
+    var imagePlaceholder = document.getElementById("imagePlaceholder");
+    imagePlaceholder.src = imagePath;
+
+    // Send the image URL to the backend
+    fetch('/post/save-image', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}' // Include CSRF token for security
+        },
+        body: JSON.stringify({ image_url: imagePath })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Image URL stored successfully:', data);
+    })
+    .catch((error) => {
+        console.error('Error storing image URL:', error);
+    });
+});
+
     </script>
 
     <script

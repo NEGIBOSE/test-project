@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Home\IndexController;
 
+//save-image
+use App\Http\Controllers\IllustrationController;
+Route::get('post/save-image', [IllustrationController::class, 'createImageUrl']);
+Route::post('post/save-image', [IllustrationController::class, 'storeImageUrl'])
+->name('image.store');
+
 //save-book
 use App\Http\Controllers\BookController;
 Route::get('post/save-book', [BookController::class, 'create']);
