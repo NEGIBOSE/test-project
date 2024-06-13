@@ -57,20 +57,6 @@
 </main>
 <footer>&copy; 2024 My portfolio</footer>
 
-<script>
-window.onload = function () {
-    var images = [
-        "./images/BABY.png"
-    ];
-
-    var randomIndex = Math.floor(Math.random() * images.length);
-    var randomImage = images[randomIndex];
-
-    var img = document.getElementById("myImage");
-    img.src = randomImage;
-};
-</script>
-
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
 </html>
