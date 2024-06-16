@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="home_select_l select_text">
-            <a href="{{ route('home.growth') }}">成長記録</a>
+            <a href="{{ route('home.growth') }}">成長記録ここまで</a>
         </div>
     </div>
 </main>
