@@ -51,7 +51,7 @@
                 <a href="{{ route('home.search') }}">読み聞かせ</a>
             </div>
             <div class="select_text bg_yellow">
-                <a href="{{ route('home.bookshelf') }}">本棚４６から３２</a>
+                <a href="{{ route('home.bookshelf') }}">本棚</a>
             </div>
         </div>
         <div class="home_select_l select_text">
