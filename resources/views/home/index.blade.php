@@ -48,7 +48,7 @@
     <div class="home_select">
         <div class="home_select_u">
             <div class="select_text bg_red">
-                <a href="{{ route('home.search') }}">読み聞かせ88</a>
+                <a href="{{ route('home.search') }}">読み聞かせ</a>
             </div>
             <div class="select_text bg_yellow">
                 <a href="{{ route('home.bookshelf') }}">本棚</a>
