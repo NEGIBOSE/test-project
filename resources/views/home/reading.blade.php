@@ -82,7 +82,7 @@
 </head>
   <body>
     <header class="header bg_red">
-      <div class="title">Chara-Booksっq</div>
+      <div class="title">Chara-Books</div>
     </header>
     <main class="reading bg_red">
       <div class="mini_title">
