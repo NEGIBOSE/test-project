@@ -74,13 +74,22 @@
 .select_yes button:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}    
+} 
+.title a{
+        background: none;
+        padding: 0;
+      }
+      .title a:hover{
+        cursor:pointer;
+      }   
 </style>
 </head>
 <body>
 <header class="header bg_red">
-    <div class="title">
-        <img src="/images/chara_logo.png" alt="png Image">
+<div class="title">
+        <a href="{{ route('home.index') }}">
+            <img src="/images/chara_logo.png" alt="png Image">
+        </a>
     </div>
     <div class="logout">
         <form action="{{ route('logout') }}" method="POST">

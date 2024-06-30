@@ -131,12 +131,22 @@
         .fade-out {
             animation: fadeOut 1s forwards;
         }
+      
+        .title a{
+        background: none;
+        padding: 0;
+      }
+      .title a:hover{
+        cursor:pointer;
+      }
     </style>
 </head>
 <body>
     <header class="header bg_red">
         <div class="title">
-            <img src="/images/chara_logo.png" alt="png Image">
+            <a href="{{ route('home.index') }}">
+                <img src="/images/chara_logo.png" alt="png Image">
+            </a>
         </div>
         <div class="logout">
             <form action="{{ route('logout') }}" method="POST">
