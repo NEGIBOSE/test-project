@@ -29,6 +29,7 @@
         padding: 8px;
         height: 100vh;
         overflow: auto;
+        border-radius:8px;
       }
       .bookshelf_contents {
         display: flex;
@@ -48,10 +49,10 @@
     </style>
 </head>
 <body>
-    <header class="header">
+    <header class="header bg_yellow">
         <div class="title">Chara-Books</div>
     </header>
-    <main class="bookshelf">
+    <main class="bookshelf bg_yellow">
       <div class="bookshelf_upper">
         <div class="bookshelf_search">
           <div class="search_input">
@@ -86,7 +87,7 @@
         </ul>
       </div>
       <div class="bookshelf_bottom">
-        <div class="select_text bg_yellow">
+        <div class="select_text bg_blue">
               <a href="{{ route('home.index') }}">HOMEへ戻る</a>
         </div>
       </div>
