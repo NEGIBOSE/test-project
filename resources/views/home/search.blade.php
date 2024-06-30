@@ -44,6 +44,7 @@
 }
 .search_input {
   display: flex;
+  margin:8px 0 0 0 ;
 }
 .search_input input {
   width: 72%;
@@ -259,7 +260,7 @@
           <div class="tab-content" id="tab1">
             <ul class="tab-content_big icon_magic">
               <li>
-                <p>SF(サイエンスフィクション)</p>
+                <h4>SF(サイエンスフィクション)</h4>
                 <ul class="tab-content_small">
                   <li>ハードSF</li>
                   <li>ソフトSF</li>
@@ -267,7 +268,7 @@
                 </ul>
               </li>
               <li>
-                <p>ファンタジー</p>
+                <h4>ファンタジー</h4>
                 <ul class="tab-content_small">
                   <li>ハイファンタジー</li>
                   <li>ローファンタジー</li>
@@ -278,7 +279,7 @@
           <div class="tab-content" id="tab2">
             <ul class="tab-content_big icon_human">
               <li>
-                <p>ノンフィクション</p>
+                <h4>ノンフィクション</h4>
                 <ul class="tab-content_small">
                   <li>自己啓発</li>
                   <li>ビジネス</li>
@@ -294,14 +295,14 @@
           <div class="tab-content" id="tab3">
             <ul class="tab-content_big icon_love">
               <li>
-                <p>ロマンス</p>
+                <h4>ロマンス</h4>
                 <ul class="tab-content_small">
                   <li>歴史ロマンス</li>
                   <li>ファンタジーロマンス</li>
                 </ul>
               </li>
               <li>
-                <p>ドラマ</p>
+                <h4>ドラマ</h4>
                 <ul class="tab-content_small">
                   <li>家族ドラマ</li>
                   <li>社会派ドラマ</li>
@@ -312,14 +313,14 @@
           <div class="tab-content" id="tab4">
             <ul class="tab-content_big icon_laugh">
               <li>
-                <p>コメディ</p>
+                <h4>コメディ</h4>
                 <ul class="tab-content_small">
                   <li>ハートフルコメディ</li>
                   <li>ブラックコメディ</li>
                 </ul>
               </li>
               <li>
-                <p>ユーモア</p>
+                <h4>ユーモア</h4>
                 <ul class="tab-content_small">
                   <li>お笑い</li>
                   <li>ロマンティックユーモア</li>
@@ -330,7 +331,7 @@
           <div class="tab-content" id="tab5">
             <ul class="tab-content_big icon_horror">
               <li>
-                <p>ミステリー</p>
+                <h4>ミステリー</h4>
                 <ul class="tab-content_small">
                   <li>推理小説</li>
                   <li>スリラー</li>
@@ -338,13 +339,13 @@
                 </ul>
               </li>
               <li>
-                <p>サスペンス</p>
+                <h4>サスペンス</h4>
                 <ul class="tab-content_small">
                   <li>サスペンス小説</li>
                 </ul>
               </li>
               <li>
-                <p>ホラー</p>
+                <h4>ホラー</h4>
                 <ul class="tab-content_small">
                   <li>ゴシックホラー</li>
                   <li>サイコホラー</li>
