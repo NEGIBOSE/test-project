@@ -674,6 +674,9 @@ main {
   background-color: #007700;
 }
 
+.bg_white{
+  background-color: #eee;
+}
 .chara_pic {
   border-radius: 16px;
   overflow: hidden;
