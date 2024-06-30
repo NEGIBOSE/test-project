@@ -32,6 +32,37 @@
             height: 360px;
             width: auto;
         }
+        .select_yes{
+            width: 50%;
+            text-align: center;
+            font-size: 24px;
+            margin: 4px;
+            color: #333;
+            border-radius: 16px;
+        }
+        .select_yes form{
+            text-align: center;
+            font-size: 24px;
+            margin: 4px;
+            color: #333;
+            border-radius:16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .select_yes button{
+            background-color: #e74c3c;
+            display: inline-block;
+            padding: 10px 20px;
+            border:none;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
     </style>
 </head>
 <body>
@@ -57,7 +88,7 @@
         </div>
         <div class="register_lower">
             <div class="home_select_u">
-                <div class="select_text bg_red">
+                <div class="select_yes bg_red">
                     <form id="bookForm" method="POST" action="{{ route('book.store') }}">
                         @csrf
                         <button type="submit" id="yesButton">はい</button>

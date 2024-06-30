@@ -664,6 +664,7 @@ main {
 }
 .mini_title {
     padding: 4px;
+    margin-bottom: 8px;
 }
 .mini_title p {
     background: #d9d9d9;
