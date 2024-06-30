@@ -56,7 +56,7 @@
     </style>
 </head>
 <body>
-<header class="header">
+<header class="header bg_yellow">
     <div class="title">
         <img src="/images/chara_logo.png" alt="png Image">
     </div>
