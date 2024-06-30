@@ -13,9 +13,52 @@
     <style>
         .home_icon {
             display: flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0px 8px;
+            margin-bottom: 8px;
         }
         .home_icon svg {
             width: 28px;
+        }
+        .home_pic {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+        .home_pic img {
+            width: 100%;
+            display: block;
+        }
+        .window_frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 10px solid rgba(255, 255, 255, 0.7);
+            box-sizing: border-box;
+            pointer-events: none;
+            border-radius: 16px;
+        }
+        .window_frame::before, .window_frame::after {
+            content: '';
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        .window_frame::before {
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            transform: translateY(-50%);
+        }
+        .window_frame::after {
+            top: 0;
+            left: 50%;
+            width: 5px;
+            height: 100%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
@@ -54,7 +97,7 @@
                 <a href="{{ route('home.bookshelf') }}">本棚</a>
             </div>
         </div>
-        <div class="home_select_l select_text">
+        <div class="home_select_l select_text bg_green">
             <a href="{{ route('home.growth') }}">成長記録</a>
         </div>
     </div>

@@ -674,6 +674,14 @@ main {
   background-color: #f1c40f;
 }
 
+.bg_green a{
+  background-color: #007700;
+}
+
+.bg_blue a{
+  background-color: #3399FF;
+}
+
 .select_text a:hover {
   opacity: 0.9;
 }

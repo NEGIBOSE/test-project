@@ -341,7 +341,7 @@
       </div>
       <div class="search_bottom">
         <div class="search_select">
-          <div class="select_text select_back">
+          <div class="select_text select_back bg_blue">
             <a href="{{ route('home.index') }}">HOME</a>
           </div>
           <div class="select_text select_register bg_red">
