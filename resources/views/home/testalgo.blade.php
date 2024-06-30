@@ -36,7 +36,7 @@
         background-color: black;
         color: white;
     }
-    .cp_tab *, .cp_tab *:before, .cp_tab *:after {
+.cp_tab *, .cp_tab *:before, .cp_tab *:after {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 }

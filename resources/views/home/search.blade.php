@@ -74,13 +74,26 @@
 .tabs {
   padding: 0 4px;
 }
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .tab-content {
   height: 32vh;
   display: none;
+  position: relative;
+  overflow: hidden; /* コンテンツがはみ出さないようにする */
   background: #d9d9d9;
 }
 .tab-content.active {
   display: block;
+  animation: slideDown 0.5s ease-out;
 }
 
 .tab-links li a {
@@ -111,6 +124,21 @@
 }
 .category_tab a {
   padding: 0;
+}
+.icon_magic{
+  background-color: #80CBC4;
+}
+.icon_human{
+  background-color: #2ca9e1;
+}
+.icon_love{
+  background-color: #80CBC4;
+}
+.icon_laugh{
+  background-color: #80CBC4;
+}
+.icon_horror{
+  background-color: #80CBC4;
 }
 
     </style>
@@ -197,7 +225,7 @@
             </li>
             <li>
               <a href="#tab5" class="category-icon" data-category="horror">
-                <div class="icon_magic icon">
+                <div class="icon_horror icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
@@ -442,7 +470,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
 // カテゴリーを処理する関数
 function processCategory(category) {
   switch (category) {
