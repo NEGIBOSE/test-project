@@ -138,7 +138,7 @@
     <body>
         <header class="header bg_white">
         <div class="title">
-            <a href="{{ route('login') }}">
+            <a href="{{ route('register') }}">
                 <img src="/images/chara_logo.png" alt="png Image">
             </a>
         </div>
