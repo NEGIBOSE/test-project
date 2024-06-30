@@ -647,6 +647,36 @@ main {
     background: #d9d9d9;
     height: 32px;
 }
+.select_text a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.select_text a:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  background-color: darken(#e74c3c, 10%); /* Adjust the background color slightly */
+}
+
+.bg_red a {
+  background-color: #e74c3c;
+}
+
+.bg_yellow a {
+  background-color: #f1c40f;
+}
+
+.select_text a:hover {
+  opacity: 0.9;
+}
 img {
     max-width: 100%; /* 最大幅を200pxに設定 */
     width: auto; /* 幅を自動調整 */
@@ -662,6 +692,7 @@ img {
     font-size: 24px;
     margin: 4px;
     color: #333;
+    border-radius:16px;
 }
 .home_select_u {
     display: flex;

@@ -11,12 +11,12 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
-      .home_icon {
-        display:flex;
-      }
-      .home_icon svg{
-        width: 28px;
-      }
+        .home_icon {
+            display: flex;
+        }
+        .home_icon svg {
+            width: 28px;
+        }
     </style>
 </head>
 <body>
