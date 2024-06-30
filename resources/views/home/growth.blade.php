@@ -15,9 +15,12 @@
     <!-- CSSファイルの読み込み -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
+      .logout{
+        background-color: #007700;
+      }
       .growth_middle{
         width: 97%;
-        margin: 0 auto;
+        margin: 16px auto 0;
         padding: 8px;
         height: 100vh;
         overflow:auto;
@@ -41,12 +44,19 @@
       .select_text{
         width:auto;
       }
+      
     </style>
   </head>
   <body>
-    <header class="header bg_green">
-        <div class="title">Chara-Books</div>
-    </header>
+  <header class="header bg_green">
+    <div class="title">Chara-Books</div>
+    <div class="logout">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="logout" ></button>
+        </form>
+    </div>
+  </header>
     <main class="growth bg_green">
       <div class="growth_upper">
         
