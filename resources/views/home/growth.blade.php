@@ -21,6 +21,7 @@
         padding: 8px;
         height: 100vh;
         overflow:auto;
+        border-radius:8px;
       }
       .growth_contents {
         display: flex;
@@ -43,17 +44,17 @@
     </style>
   </head>
   <body>
-    <header class="header">
+    <header class="header bg_green">
         <div class="title">Chara-Books</div>
     </header>
-    <main class="bookshelf">
+    <main class="growth bg_green">
       <div class="growth_upper">
         
       </div>
       <div class="growth_middle bg_gray">
       <ul class="growth_contents">
     @foreach ($illustrations as $illustration)
-    <li class="growth_cont">
+    <li class="growth_cont chara_pic">
         <img src="{{ $illustration->image_url }}" alt="Illustration">
     </li>
     @endforeach
@@ -61,7 +62,7 @@
 
       </div>
       <div class="bookshelf_bottom">
-        <div class="select_text bg_yellow">
+        <div class="select_text bg_green">
               <a href="{{ route('home.index') }}">HOMEへ戻る</a>
         </div>
 

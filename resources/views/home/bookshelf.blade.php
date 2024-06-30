@@ -87,7 +87,7 @@
         </ul>
       </div>
       <div class="bookshelf_bottom">
-        <div class="select_text bg_blue">
+        <div class="select_text bg_yellow">
               <a href="{{ route('home.index') }}">HOMEへ戻る</a>
         </div>
       </div>

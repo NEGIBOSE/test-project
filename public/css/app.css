@@ -615,11 +615,46 @@ main {
 .bg_red {
     background: #eed3d9;
 }
+.bg_red a {
+  background-color: #e74c3c;
+}
+
 .bg_yellow {
     background: #f5e8dd;
 }
+.bg_yellow a {
+  background-color: #f1c40f;
+}
+
 .bg_gray {
     background: #d9d9d9;
+}
+.bg_gray a{
+  background: #666666;
+}
+
+.bg_blue {
+  background: #eed3d9;
+}
+.bg_blue a{
+  background-color: #3399FF;
+}
+
+.bg_green {
+  background: #ccd3ca;
+}
+.bg_green a{
+  background-color: #007700;
+}
+
+.chara_pic {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+.chara_pic img {
+  width: 100%;
+  display: block;
 }
 .icon {
     width: 56px;
@@ -664,22 +699,6 @@ main {
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   background-color: darken(#e74c3c, 10%); /* Adjust the background color slightly */
-}
-
-.bg_red a {
-  background-color: #e74c3c;
-}
-
-.bg_yellow a {
-  background-color: #f1c40f;
-}
-
-.bg_green a{
-  background-color: #007700;
-}
-
-.bg_blue a{
-  background-color: #3399FF;
 }
 
 .select_text a:hover {
