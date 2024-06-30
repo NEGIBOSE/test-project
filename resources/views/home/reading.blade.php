@@ -18,6 +18,10 @@
     .reading {
   position: relative;
 }
+
+.logout button{
+  background-color:#e74c3c;
+}
 #comment {
   display: none; /* 初期状態では非表示に設定 */
 }
@@ -41,13 +45,21 @@
 .fade-in-comment {
   animation: fadeIn 1s ease-in; /* アニメーションを1秒かけて実行（イージングを使用） */
 }
-
+.chara_pic:hover {
+  transform: translateY(0px);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0), 
+              0 0px 0px rgba(0, 0, 0, 0);
+}
 .reading_girl {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 92%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:0px 0px 8px 2px rgba(255, 255, 255, 1), 0px 0px 8px 6px rgba(0, 0, 0, 1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .reading_girl img {
   width: 100%;
@@ -81,9 +93,20 @@
 </style>
 </head>
   <body>
-    <header class="header bg_red">
-      <div class="title">Chara-Books</div>
-    </header>
+  <header class="header bg_red">
+    <div class="title">
+        <img src="/images/chara_logo.png" alt="png Image">
+    </div>
+    <div class="logout">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                
+            </button>
+        </form>
+    </div>
+</header>
     <main class="reading bg_red">
       <div class="mini_title">
         <p id="comment" class="select_text fade-in-comment"></p>
@@ -180,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }  }
 
   // 7秒後にredirectToNextPage関数を実行
-  setTimeout(redirectToNextPage, 7000); // ミリ秒単位で指定するため、7000ミリ秒＝7秒
+  //setTimeout(redirectToNextPage, 7000); // ミリ秒単位で指定するため、7000ミリ秒＝7秒
 });
 
     </script>

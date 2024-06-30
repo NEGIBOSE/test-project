@@ -594,6 +594,7 @@ body {
     text-align: center;
     height: 4vh;
     position: relative;
+    z-index: 1;
 }
 .logout{
   position: absolute;
