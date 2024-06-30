@@ -595,7 +595,18 @@ body {
     height: 4vh;
     position: relative;
 }
+.logout {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  content: url(/images/logout-icon.svg);
+  border-radius: 20%;
+  background-color: #418edf;
+  width: 32px;
+  color: white;
+}
 .title {
+  margin: 8px 0;
     height: 100%;
     display: grid;
     place-items: center;

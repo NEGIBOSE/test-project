@@ -30,6 +30,9 @@
             width: 100%;
             display: block;
         }
+
+
+
     </style>
 </head>
 <body>
@@ -38,7 +41,7 @@
     <div class="logout">
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <button type="submit">Logout</button>
+            <button type="submit" class="logout" ></button>
         </form>
     </div>
 </header>
