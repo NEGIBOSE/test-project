@@ -154,7 +154,9 @@
   </head>
   <body>
   <header class="header">
-    <div class="title">Chara-Books</div>
+    <div class="title">
+        <img src="/images/chara_logo.png" alt="png Image">
+    </div>
     <div class="logout">
         <form action="{{ route('logout') }}" method="POST">
             @csrf
@@ -164,7 +166,7 @@
             </button>
         </form>
     </div>
-</header>
+  </header>
     <main class="search">
       <div class="search_upper">
         <div class="reading_search">

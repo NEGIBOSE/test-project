@@ -56,8 +56,10 @@
     </style>
 </head>
 <body>
-<header class="header bg_yellow">
-    <div class="title">Chara-Books</div>
+<header class="header">
+    <div class="title">
+        <img src="/images/chara_logo.png" alt="png Image">
+    </div>
     <div class="logout">
         <form action="{{ route('logout') }}" method="POST">
             @csrf
