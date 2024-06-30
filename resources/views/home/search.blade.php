@@ -18,11 +18,15 @@
       body {
   background: #eed3d9;
 }
+.logout {
+  background-color:#e74c3c;
+}
 .search {
   justify-content: space-between;
 }
 .search_upper {
   width: 100%;
+  margin:8px 0 0 0;
 }
 .search_select {
   display: flex;
@@ -149,9 +153,15 @@
 
   </head>
   <body>
-    <header class="header">
-      <div class="title">Chara-Books</div>
-    </header>
+  <header class="header bg_red">
+    <div class="title">Chara-Books</div>
+    <div class="logout">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="logout" ></button>
+        </form>
+    </div>
+  </header>
     <main class="search">
       <div class="search_upper">
         <div class="reading_search">
