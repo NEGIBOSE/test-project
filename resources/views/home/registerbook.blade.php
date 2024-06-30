@@ -33,38 +33,46 @@
             height: 360px;
             width: auto;
         }
-        .select_yes{
-            width: 50%;
-            text-align: center;
-            font-size: 24px;
-            margin: 4px;
-            color: #333;
-            border-radius: 16px;
-        }
-        .select_yes form{
-            text-align: center;
-            font-size: 24px;
-            margin: 4px;
-            color: #333;
-            border-radius:16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .select_yes button{
-            background-color: #e74c3c;
-            display: inline-block;
-            padding: 10px 20px;
-            border:none;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-        }
-    </style>
+        .select_yes {
+    width: 50%;
+    text-align: center;
+    font-size: 24px;
+    margin: 4px;
+    color: #333;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.select_yes form {
+    text-align: center;
+    font-size: 24px;
+    margin: 4px;
+    color: #333;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.select_yes button {
+    background-color: #e74c3c;
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.select_yes button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}    
+</style>
 </head>
 <body>
 <header class="header bg_red">
