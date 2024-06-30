@@ -16,6 +16,7 @@
         .register_upper {
             display: flex;
             flex-direction: column;
+            margin: 16px 0 0 0 ;
         }
         .register_upper .icon {
             margin: 0 auto;
@@ -66,7 +67,7 @@
     </style>
 </head>
 <body>
-<header class="header bg_reg">
+<header class="header bg_red">
     <div class="title">
         <img src="/images/chara_logo.png" alt="png Image">
     </div>
