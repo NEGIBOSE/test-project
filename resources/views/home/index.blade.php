@@ -20,6 +20,12 @@
         }
         .home_icon svg {
             width: 28px;
+            transition: width 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .home_icon svg:hover {
+            width: 40px;
+            transform: translateY(-3px); /* 少し浮かび上がるように */
         }
         .home_pic {
             border-radius: 16px;
