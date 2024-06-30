@@ -645,13 +645,30 @@ body {
 }
 .title {
   margin: 8px 0;
-    height: 100%;
-    display: grid;
-    place-items: center;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
-.title img{
+
+.title a {
+  background: none;
+  padding: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title a:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.title img {
   width: 96px;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.title a:hover img {
+  transform: scale(1.1);
 }
 footer {
     position: absolute;

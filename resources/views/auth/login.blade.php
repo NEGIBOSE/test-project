@@ -137,9 +137,11 @@
     </head>
     <body>
         <header class="header bg_white">
-            <div class="title">
+        <div class="title">
+            <a href="{{ route('login') }}">
                 <img src="/images/chara_logo.png" alt="png Image">
-            </div>
+            </a>
+        </div>
         </header>
         <main class="login bg_white">
             <form method="POST" action="{{ route('login') }}">
