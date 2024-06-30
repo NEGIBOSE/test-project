@@ -13,6 +13,9 @@
         .register {
             justify-content: space-between;
         }
+        .logout button{
+            background-color:#e74c3c;
+        }
         .register_upper {
             display: flex;
             flex-direction: column;

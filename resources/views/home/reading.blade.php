@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }  }
 
   // 7秒後にredirectToNextPage関数を実行
-  //setTimeout(redirectToNextPage, 7000); // ミリ秒単位で指定するため、7000ミリ秒＝7秒
+  setTimeout(redirectToNextPage, 7000); // ミリ秒単位で指定するため、7000ミリ秒＝7秒
 });
 
     </script>
