@@ -596,13 +596,14 @@ body {
     position: relative;
     z-index: 1;
 }
-.logout{
+.logout {
   position: absolute;
-  top:8px;
+  top: 8px;
   right: 8px;
   border-radius: 20%;
   overflow: hidden;
 }
+
 .logout button {
   display: flex;
   align-items: center;
@@ -611,6 +612,33 @@ body {
   color: white;
   padding: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.logout button svg {
+  transition: transform 0.3s ease;
+}
+
+.logout-text {
+  opacity: 0;
+  margin-left: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.logout button:hover {
+  background-color: #eee;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.logout button:hover svg {
+  transform: translateX(-10px);
+}
+
+.logout button:hover .logout-text {
+  opacity: 1;
+  transform: translateX(10px);
 }
 .logout button svg {
 
