@@ -90,6 +90,9 @@
 .cp_tab > input:nth-child(7):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(4) {
 	background: #8BC34A;
 }
+.cp_tab > input:nth-child(9):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(5) {
+	background: #333;
+}
 .cp_tab > label {
 	position: relative;
 	display: inline-block;
@@ -109,6 +112,9 @@
 }
 .cp_tab > input:nth-child(7) + label {
 	background: #8BC34A;
+}
+.cp_tab > input:nth-child(9) + label {
+	background: #333;
 }
 .cp_tab > label:hover {
 	color: #0066cc;
@@ -186,20 +192,24 @@
     </label>
 	<div class="cp_tabpanels">
 		<div id="first_tab03" class="cp_tabpanel">
-		<h2>First Tab</h2>
-		<p>First Tab text</p>
+            <h2>First Tab</h2>
+            <p>First Tab text</p>
 		</div>
 		<div id="second_tab03" class="cp_tabpanel">
-		<h2>Second Tab</h2>
-		<p>Second Tab text</p>
+            <h2>Second Tab</h2>
+            <p>Second Tab text</p>
 		</div>
 		<div id="third_tab03" class="cp_tabpanel">
-		<h2>Third Tab</h2>
-		<p>Third Tab text</p>
+            <h2>Third Tab</h2>
+            <p>Third Tab text</p>
 		</div>
 		<div id="force_tab03" class="cp_tabpanel">
-		<h2>Force Tab</h2>
-		<p>Force Tab text</p>
+            <h2>Force Tab</h2>
+            <p>Force Tab text</p>
+		</div>
+        <div id="force_tab03" class="cp_tabpanel">
+            <h2>Fifth Tab</h2>
+            <p>Fifth Tab text</p>
 		</div>
 	</div>
 </div>
