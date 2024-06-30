@@ -595,15 +595,24 @@ body {
     height: 4vh;
     position: relative;
 }
-.logout {
+.logout{
   position: absolute;
+  top:8px;
   right: 8px;
-  top: 8px;
-  content: url(/images/logout-icon.svg);
   border-radius: 20%;
-  background-color: #3399FF;
-  width: 32px;
+  overflow: hidden;
+}
+.logout button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: #3399FF;
   color: white;
+  padding: 4px;
+  cursor: pointer;
+}
+.logout button svg {
+
 }
 .title {
   margin: 8px 0;

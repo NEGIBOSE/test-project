@@ -14,8 +14,12 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
+      .logout button{
+        background-color:#f1c40f;
+      }
       .search_input {
         display: flex;
+        margin-top:16px;
       }
       .search_input input {
         width: 70%;
@@ -52,9 +56,18 @@
     </style>
 </head>
 <body>
-    <header class="header bg_yellow">
-        <div class="title">Chara-Books</div>
-    </header>
+<header class="header bg_yellow">
+    <div class="title">Chara-Books</div>
+    <div class="logout">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                
+            </button>
+        </form>
+    </div>
+</header>
     <main class="bookshelf bg_yellow">
       <div class="bookshelf_upper">
         <div class="bookshelf_search">
