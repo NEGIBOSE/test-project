@@ -56,6 +56,9 @@
   width: 28%;
   border: 0;
 }
+.search_input button:hover {
+  cursor:pointer;
+}
 .searchResults {
   height: 24vh;
 }
@@ -70,6 +73,9 @@
   border-bottom: 1px solid #333;
   padding: 4px;
   margin: 0 4px;
+}
+.searchResults li:hover{
+  cursor:pointer;
 }
 .search_category {
   width: 100%;

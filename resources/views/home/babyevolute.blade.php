@@ -51,11 +51,16 @@
             animation: fadeOut 1s ease-in; /* アニメーションを1秒かけて実行（イージングを使用） */
         }
         .reading_girl {
-    position: relative; /* 相対配置コンテキストを設定 */
-    width: 92%;
-    text-align: center;
-    margin-top: -16px; /* 上方に16px移動 */
-}
+            position: relative; /* 相対配置コンテキストを設定 */
+            width: 92%;
+            text-align: center;
+            margin-top: -16px; /* 上方に16px移動 */
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow:0px 0px 8px 2px rgba(255, 255, 255, 1), 0px 0px 8px 6px rgba(0, 0, 0, 1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
         .reading_girl img {
             width: 100%;
             transition: opacity 0.5s ease-in-out; /* 画像の切り替えにフェードアニメーションを追加 */
@@ -129,6 +134,20 @@
     </style>
 </head>
 <body>
+    <header class="header bg_red">
+        <div class="title">
+            <img src="/images/chara_logo.png" alt="png Image">
+        </div>
+        <div class="logout">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                    
+                </button>
+            </form>
+        </div>
+    </header>
     <main class="babyevolute bg_red reading">
         <div class="text-container">
             <p id="text1">おやおや？</p>
