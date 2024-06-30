@@ -30,7 +30,12 @@
             width: 100%;
             display: block;
         }
-
+        .home_pic a{
+            padding: 0px;
+            border: 1px #fff solid;
+            border-radius: 16px;
+            overflow: hidden;
+        }
 
 
     </style>
@@ -59,11 +64,13 @@
             @endforeach
         </div>
         <div class="home_pic chara_pic">
+        <a href="{{ route('home.growth') }}">
             @if($latestIllustration)
                 <img src="{{ asset($latestIllustration->image_url) }}" alt="Illustration Image" />
             @else
                 <img src="{{ asset($defaultImage) }}" alt="Default Image" />
             @endif
+        </a>
         </div>
     </div>
     <div class="home_select">
