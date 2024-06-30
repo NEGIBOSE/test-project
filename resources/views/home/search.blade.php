@@ -76,7 +76,7 @@
 }
 @keyframes slideDown {
   0% {
-    transform: translateY(-10%);
+    transform: translateY(-20%);
     opacity: 0;
   }
   100% {
@@ -89,7 +89,6 @@
   display: none;
   position: relative;
   overflow: hidden; /* コンテンツがはみ出さないようにする */
-  background: #d9d9d9;
 }
 .tab-content.active {
   display: block;
@@ -109,6 +108,8 @@
   height: 32vh;
   overflow-y: auto;
   padding: 8px 0;
+  margin-top:-2px;
+  border-radius: 0 0 16px 16px;
 }
 .tab-content_big p {
   margin: 0;
@@ -125,6 +126,9 @@
 .category_tab a {
   padding: 0;
 }
+.icon{
+  border-radius:16px 16px 0 0 ;
+}
 .icon_magic{
   background-color: #80CBC4;
 }
@@ -132,13 +136,13 @@
   background-color: #2ca9e1;
 }
 .icon_love{
-  background-color: #80CBC4;
+  background-color: #FF5192;
 }
 .icon_laugh{
-  background-color: #80CBC4;
+  background-color: #8BC34A;
 }
 .icon_horror{
-  background-color: #80CBC4;
+  background-color: #666;
 }
 
     </style>
@@ -238,7 +242,7 @@
           </ul>
 
           <div class="tab-content" id="tab1">
-            <ul class="tab-content_big">
+            <ul class="tab-content_big icon_magic">
               <li>
                 <p>SF(サイエンスフィクション)</p>
                 <ul class="tab-content_small">
@@ -257,7 +261,7 @@
             </ul>
           </div>
           <div class="tab-content" id="tab2">
-            <ul class="tab-content_big">
+            <ul class="tab-content_big icon_human">
               <li>
                 <p>ノンフィクション</p>
                 <ul class="tab-content_small">
@@ -273,7 +277,7 @@
             </ul>
           </div>
           <div class="tab-content" id="tab3">
-            <ul class="tab-content_big">
+            <ul class="tab-content_big icon_love">
               <li>
                 <p>ロマンス</p>
                 <ul class="tab-content_small">
@@ -291,7 +295,7 @@
             </ul>
           </div>
           <div class="tab-content" id="tab4">
-            <ul class="tab-content_big">
+            <ul class="tab-content_big icon_laugh">
               <li>
                 <p>コメディ</p>
                 <ul class="tab-content_small">
@@ -309,7 +313,7 @@
             </ul>
           </div>
           <div class="tab-content" id="tab5">
-            <ul class="tab-content_big">
+            <ul class="tab-content_big icon_horror">
               <li>
                 <p>ミステリー</p>
                 <ul class="tab-content_small">
