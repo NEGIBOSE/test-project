@@ -101,6 +101,38 @@
             .justify-end {
                 justify-content: flex-end;
             }
+            .login{
+                padding:160px 0;
+            }
+            .login form{
+                width: 96%;
+                margin: 0 auto;
+            }
+            .forget_password{
+                box-shadow:none;
+            }
+            .login_button {
+                background-color: #999999;
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .login_button:hover {
+                background-color: #cccccc;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .login_button:active {
+                transform: translateY(-1px);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
         </style>
     </head>
     <body>
@@ -141,12 +173,12 @@
                 
                 <div class="flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
+                    <a class="forget_password underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                     @endif
                     
-                    <x-primary-button class="ms-3">
+                    <x-primary-button class="login_button ms-3">
                         {{ __('Log in') }}
                     </x-primary-button>
                 </div>
