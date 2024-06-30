@@ -590,8 +590,10 @@ body {
 }
 .header {
     display: flex; /*一時的*/
+    justify-content: center;
     text-align: center;
     height: 4vh;
+    position: relative;
 }
 .title {
     height: 100%;
