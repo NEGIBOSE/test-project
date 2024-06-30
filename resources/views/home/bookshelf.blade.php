@@ -31,6 +31,9 @@
         overflow: auto;
         border-radius:8px;
       }
+      .bookshelf_search select{
+        margin:8px 16px;
+      }
       .bookshelf_contents {
         display: flex;
         flex-wrap: wrap;
