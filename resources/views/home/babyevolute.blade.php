@@ -12,6 +12,9 @@
     <!-- CSSファイルの読み込み -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
+        .logout button{
+            background-color:#e74c3c;
+        }
         .reading {
             position: relative;
             display: flex;
