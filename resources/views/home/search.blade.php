@@ -155,6 +155,9 @@
       .title a:hover{
               cursor:pointer;
       }  
+      .bg_blue a{
+        background-color: #007AB7;
+      }
     </style>
   </head>
   <body>

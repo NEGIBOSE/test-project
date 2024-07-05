@@ -13,8 +13,7 @@
                 display: flex;
                 align-items: center;
                 border-radius: 8px;
-                padding: 0px 8px;
-                margin-bottom: 8px;
+                margin-bottom: 24px;
             }
             .home_icon svg {
                 width: 28px;
@@ -49,8 +48,8 @@
             }
         </style>
     </head>
-    <body>
-        <header class="header bg_blue">
+    <body class="bg_blue">
+        <header class="header">
             <div class="title">
                 <a href="{{ route('home.index') }}">
                     <img src="/images/chara_logo.png" alt="png Image">

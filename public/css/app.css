@@ -598,12 +598,11 @@ body {
 }
 .logout {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 16px;
+  right: 16px;
   border-radius: 20%;
   overflow: hidden;
 }
-
 .logout button {
   display: flex;
   align-items: center;
@@ -615,27 +614,22 @@ body {
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
-
 .logout button svg {
   transition: transform 0.3s ease;
 }
-
 .logout-text {
   opacity: 0;
   margin-left: 10px;
   transition: opacity 0.3s ease, transform 0.3s ease;
   white-space: nowrap;
 }
-
 .logout button:hover {
   background-color: #eee;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 .logout button:hover svg {
   transform: translateX(-10px);
 }
-
 .logout button:hover .logout-text {
   opacity: 1;
   transform: translateX(10px);
@@ -644,36 +638,32 @@ body {
 
 }
 .title {
-  margin: 8px 0;
+  margin: 16px 0;
   height: 100%;
   display: grid;
   place-items: center;
 }
-
 .title a {
   background: none;
   padding: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .title a:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
-
 .title img {
   width: 96px;
   height: auto;
   transition: transform 0.3s ease;
 }
-
 .title a:hover img {
   transform: scale(1.1);
 }
 footer {
     position: absolute;
-    bottom: 1px;
-    right: 2px;
+    bottom: 4px;
+    right: 8px;
     font-size: 8px;
     text-align: center;
     display: grid;
@@ -683,13 +673,19 @@ main {
     height: 96vh;
     display: flex;
     flex-direction: column;
+    padding: 0 16px 16px;
+}
+.bg_blue {
+  background: #A8D4EA;
+}
+.bg_blue a{
+  background-color: #007AB7;
 }
 .bg_red {
     background: #EAB0D2;
 }
 .bg_red a {
   background-color: rgb(255, 127, 191);
-  ;
 }
 
 .bg_yellow {
@@ -705,14 +701,6 @@ main {
 .bg_gray a{
   background: #666666;
 }
-
-.bg_blue {
-  background: #A8D4EA;
-}
-.bg_blue a{
-  background-color: #007AB7;
-}
-
 .bg_green {
   background: #E4EEB5;
 }
@@ -740,32 +728,31 @@ main {
   display: block;
 }
 .icon {
-    width: 56px;
-    height: auto;
-    background: #d9d9d9;
-    padding: 4px;
+  width: 56px;
+  height: auto;
+  background: #d9d9d9;
+  padding: 4px;
 }
 .mini_title {
-    padding: 4px;
-    margin-bottom: 8px;
+  padding: 4px;
+  margin-bottom: 8px;
 }
 .mini_title p {
-    background: #d9d9d9;
-    width: 100%;
-    margin: 0;
-    padding: 8px;
+  background: #d9d9d9;
+  width: 100%;
+  margin: 0;
+  padding: 8px;
 }
 .home {
-    justify-content: space-between;
-    background-color: #A8D4EA;
+  justify-content: space-between;
+  background-color: #A8D4EA;
 }
 .home_middle {
-    width: 92%;
-    margin: 0 auto;
+  padding: 0 16px;
 }
 .home_icon {
-    background: #d9d9d9;
-    height: 32px;
+  background: #d9d9d9;
+  height: 32px;
 }
 .select_text a {
   display: inline-block;
