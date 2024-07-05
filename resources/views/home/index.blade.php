@@ -21,7 +21,7 @@
             }
 
             .home_icon svg:hover {
-                width: 40px;
+                width: 48px;
                 transform: translateY(-3px); /* 少し浮かび上がるように */
             }
             .home_pic {
