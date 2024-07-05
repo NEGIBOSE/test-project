@@ -804,6 +804,7 @@ img {
     font-size: 24px;
     margin: 4px;
     color: #333;
+    border:1px #666666 solid;
     border-radius:16px;
 }
 .home_select_u {
