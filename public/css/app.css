@@ -673,7 +673,7 @@ main {
     height: 96vh;
     display: flex;
     flex-direction: column;
-    padding: 0 16px 16px;
+    padding: 16px;
 }
 .bg_blue {
   background: #A8D4EA;
