@@ -19,7 +19,7 @@
         background: #eed3d9;
       }
       .logout button{
-        background-color:#e74c3c;
+        background-color:rgb(255, 127, 191);
       }
       .search {
         justify-content: space-between;

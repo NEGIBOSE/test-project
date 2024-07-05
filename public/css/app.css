@@ -608,7 +608,7 @@ body {
   display: flex;
   align-items: center;
   border: none;
-  background: #3399FF;
+  background: #007AB7;
   color: white;
   padding: 4px;
   cursor: pointer;
@@ -688,7 +688,8 @@ main {
     background: #EAB0D2;
 }
 .bg_red a {
-  background-color: #B61972;
+  background-color: rgb(255, 127, 191);
+  ;
 }
 
 .bg_yellow {
@@ -713,7 +714,7 @@ main {
 }
 
 .bg_green {
-  background: #FFF8B6;
+  background: #E4EEB5;
 }
 .bg_green a{
   background-color: #A4C520;
@@ -756,6 +757,7 @@ main {
 }
 .home {
     justify-content: space-between;
+    background-color: #A8D4EA;
 }
 .home_middle {
     width: 92%;
@@ -810,6 +812,5 @@ img {
 }
 .home_select_l {
     width: auto;
-    background: #ccd3ca;
 }
 

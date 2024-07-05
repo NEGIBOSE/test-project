@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
       .logout button{
-        background-color: #007700;
+        background-color: #A4C520;
       }
       .growth_middle{
         width: 97%;

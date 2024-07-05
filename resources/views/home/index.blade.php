@@ -41,20 +41,18 @@
             border: 1px #fff solid;
             border-radius: 16px;
             overflow: hidden;
-        }
-
-            
+        }  
         .title a{
-        background: none;
-        padding: 0;
-      }
-      .title a:hover{
-        cursor:pointer;
-      }
+            background: none;
+            padding: 0;
+        }
+        .title a:hover{
+            cursor:pointer;
+        }
     </style>
 </head>
 <body>
-<header class="header">
+<header class="header bg_blue">
     <div class="title">
         <a href="{{ route('home.index') }}">
             <img src="/images/chara_logo.png" alt="png Image">

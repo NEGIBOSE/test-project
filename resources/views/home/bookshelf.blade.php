@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
       .logout button{
-        background-color:#f1c40f;
+        background-color:#FFE600;
       }
       .search_input {
         display: flex;

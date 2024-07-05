@@ -1,89 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chara-Books</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <style>
-        .register {
-            justify-content: space-between;
-        }
-        .logout button{
-            background-color:#e74c3c;
-        }
-        .register_upper {
-            display: flex;
-            flex-direction: column;
-            margin: 16px 0 0 0 ;
-        }
-        .register_upper .icon {
-            margin: 0 auto;
-            background: none;
-        }
-        #selectedTitle {
-            font-size: 16px;
-        }
-        .register_middle {
-            display: flex;
-            justify-content: center;
-        }
-        .register_middle img {
-            height: 360px;
-            width: auto;
-        }
-        .select_yes {
-    width: 50%;
-    text-align: center;
-    font-size: 24px;
-    margin: 4px;
-    color: #333;
-    border-radius: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chara-Books</title>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <style>
+            .register {
+                justify-content: space-between;
+            }
+            .logout button{
+                background-color:rgb(255, 127, 191);
+            }
+            .register_upper {
+                display: flex;
+                flex-direction: column;
+                margin: 16px 0 0 0 ;
+            }
+            .register_upper .icon {
+                margin: 0 auto;
+                background: none;
+            }
+            #selectedTitle {
+                font-size: 16px;
+            }
+            .register_middle {
+                display: flex;
+                justify-content: center;
+            }
+            .register_middle img {
+                height: 360px;
+                width: auto;
+            }
+            .select_yes {
+                width: 50%;
+                text-align: center;
+                font-size: 24px;
+                margin: 4px;
+                color: #333;
+                border-radius: 16px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
 
-.select_yes form {
-    text-align: center;
-    font-size: 24px;
-    margin: 4px;
-    color: #333;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            .select_yes form {
+                text-align: center;
+                font-size: 24px;
+                margin: 4px;
+                color: #333;
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-.select_yes button {
-    background-color: #e74c3c;
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-}
+            .select_yes button {
+                background-color: rgb(255, 127, 191);
+                display: inline-block;
+                padding: 10px 20px;
+                border: none;
+                font-size: 16px;
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+            }
 
-.select_yes button:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-} 
-.title a{
-        background: none;
-        padding: 0;
-      }
-      .title a:hover{
-        cursor:pointer;
-      }   
-</style>
-</head>
+            .select_yes button:hover {
+                transform: translateY(-2px) scale(1.05);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            } 
+            .title a{
+                    background: none;
+                    padding: 0;
+            }
+            .title a:hover{
+                cursor:pointer;
+            }   
+        </style>
+    </head>
 <body>
 <header class="header bg_red">
 <div class="title">
