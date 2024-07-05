@@ -36,7 +36,6 @@
       }
       .select_back {
         width: 40%;
-        background: #b5c0d0;
       }
       .reading_search {
         display: flex;
@@ -105,6 +104,7 @@
         animation: slideDown 0.5s ease-out;
       }
       .tab-links li a {
+        border-radius:16px;
         opacity: 0.4; /* 全てのタブの不透明度を設定 */
       }
       .tab-links li.active a,
@@ -177,7 +177,7 @@
         </form>
     </div>
   </header>
-    <main class="search">
+    <main class="search bg_red">
       <div class="search_upper">
         <div class="reading_search">
           <div class="search_input">
