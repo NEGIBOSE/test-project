@@ -61,8 +61,8 @@
         }
       </style>
   </head>
-  <body>
-    <header class="header bg_yellow">
+  <body class="bg_yellow">
+    <header class="header">
       <div class="title">
           <a href="{{ route('home.index') }}">
               <img src="/images/chara_logo.png" alt="png Image">
@@ -77,7 +77,7 @@
         </form>
       </div>
     </header>
-    <main class="bookshelf bg_yellow">
+    <main class="bookshelf">
       <div class="bookshelf_upper">
         <div class="bookshelf_search">
           <div class="search_input">

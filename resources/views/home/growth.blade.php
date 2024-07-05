@@ -18,7 +18,7 @@
       }
       .growth_middle{
         width: 97%;
-        margin: 16px auto 0;
+        margin: 24px 0 16px 0;
         padding: 8px;
         height: 100vh;
         overflow:auto;
@@ -49,8 +49,8 @@
       }
     </style>
   </head>
-  <body>
-    <header class="header bg_green">
+  <body class="bg_green">
+    <header class="header">
       <div class="title">
           <a href="{{ route('home.index') }}">
               <img src="/images/chara_logo.png" alt="png Image">
@@ -65,7 +65,7 @@
           </form>
       </div>
     </header>
-    <main class="growth bg_green">
+    <main class="growth">
       <div class="growth_upper">
         
       </div>
