@@ -16,151 +16,146 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
       body {
-  background: #eed3d9;
-}
-.logout button{
-  background-color:#e74c3c;
-}
-.search {
-  justify-content: space-between;
-}
-.search_upper {
-  width: 100%;
-  margin:8px 0 0 0;
-}
-.search_select {
-  display: flex;
-}
-.select_register {
-  width: 60%;
-}
-.select_back {
-  width: 40%;
-  background: #b5c0d0;
-}
-.reading_search {
-  display: flex;
-  flex-direction: column;
-}
-.search_input {
-  display: flex;
-  margin:8px 0 0 0 ;
-}
-.search_input input {
-  width: 72%;
-  background: #d9d9d9;
-  border: 0px;
-  text-align: left;
-}
-.search_input button {
-  width: 28%;
-  border: 0;
-}
-.search_input button:hover {
-  cursor:pointer;
-}
-.searchResults {
-  height: 24vh;
-}
-.searchResults ul {
-  height: 24vh; /* 例えば高さを200pxに固定 */
-  background: #d9d9d9;
-  margin: 8px;
-  padding: 0 4px;
-  overflow-y: auto;
-}
-.searchResults li {
-  border-bottom: 1px solid #333;
-  padding: 4px;
-  margin: 0 4px;
-}
-.searchResults li:hover{
-  cursor:pointer;
-}
-.search_category {
-  width: 100%;
-  margin: 16px 0;
-}
-
-.tabs {
-  padding: 0 4px;
-}
-@keyframes slideDown {
-  0% {
-    transform: translateY(-20%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-.tab-content {
-  height: 32vh;
-  display: none;
-  position: relative;
-  overflow: hidden; /* コンテンツがはみ出さないようにする */
-}
-.tab-content.active {
-  display: block;
-  animation: slideDown 0.5s ease-out;
-}
-
-.tab-links li a {
-  opacity: 0.4; /* 全てのタブの不透明度を設定 */
-}
-
-.tab-links li.active a,
-.tab-links li a:hover {
-  opacity: 1; /* 選択されたタブとホバー時の不透明度を設定 */
-}
-
-.tab-content_big {
-  height: 32vh;
-  overflow-y: auto;
-  padding: 8px 0;
-  margin-top:-2px;
-  border-radius: 0 0 16px 16px;
-}
-.tab-content_big p {
-  margin: 0;
-}
-
-.tab-content_big li {
-  padding: 0 16px;
-  margin-bottom: 8px;
-}
-.category_tab {
-  display: flex;
-  justify-content: space-between;
-}
-.category_tab a {
-  padding: 0;
-}
-.icon{
-  border-radius:16px 16px 0 0 ;
-}
-.icon_magic{
-  background-color: #80CBC4;
-}
-.icon_human{
-  background-color: #2ca9e1;
-}
-.icon_love{
-  background-color: #FF5192;
-}
-.icon_laugh{
-  background-color: #8BC34A;
-}
-.icon_horror{
-  background-color: #666;
-}
-.title a{
-        background: none;
+        background: #eed3d9;
+      }
+      .logout button{
+        background-color:#e74c3c;
+      }
+      .search {
+        justify-content: space-between;
+      }
+      .search_upper {
+        width: 100%;
+        margin:8px 0 0 0;
+      }
+      .search_select {
+        display: flex;
+      }
+      .select_register {
+        width: 60%;
+      }
+      .select_back {
+        width: 40%;
+        background: #b5c0d0;
+      }
+      .reading_search {
+        display: flex;
+        flex-direction: column;
+      }
+      .search_input {
+        display: flex;
+        margin:8px 0 0 0 ;
+      }
+      .search_input input {
+        width: 72%;
+        background: #d9d9d9;
+        border: 0px;
+        text-align: left;
+      }
+      .search_input button {
+        width: 28%;
+        border: 0;
+      }
+      .search_input button:hover {
+        cursor:pointer;
+      }
+      .searchResults {
+        height: 24vh;
+      }
+      .searchResults ul {
+        height: 24vh; /* 例えば高さを200pxに固定 */
+        background: #d9d9d9;
+        margin: 8px;
+        padding: 0 4px;
+        overflow-y: auto;
+      }
+      .searchResults li {
+        border-bottom: 1px solid #333;
+        padding: 4px;
+        margin: 0 4px;
+      }
+      .searchResults li:hover{
+        cursor:pointer;
+      }
+      .search_category {
+        width: 100%;
+        margin: 16px 0;
+      }
+      .tabs {
+        padding: 0 4px;
+      }
+      @keyframes slideDown {
+        0% {
+          transform: translateY(-20%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .tab-content {
+        height: 32vh;
+        display: none;
+        position: relative;
+        overflow: hidden; /* コンテンツがはみ出さないようにする */
+      }
+      .tab-content.active {
+        display: block;
+        animation: slideDown 0.5s ease-out;
+      }
+      .tab-links li a {
+        opacity: 0.4; /* 全てのタブの不透明度を設定 */
+      }
+      .tab-links li.active a,
+      .tab-links li a:hover {
+        opacity: 1; /* 選択されたタブとホバー時の不透明度を設定 */
+      }
+      .tab-content_big {
+        height: 32vh;
+        overflow-y: auto;
+        padding: 8px 0;
+        margin-top:-2px;
+        border-radius: 0 0 16px 16px;
+      }
+      .tab-content_big p {
+        margin: 0;
+      }
+      .tab-content_big li {
+        padding: 0 16px;
+        margin-bottom: 8px;
+      }
+      .category_tab {
+        display: flex;
+        justify-content: space-between;
+      }
+      .category_tab a {
         padding: 0;
       }
+      .icon{
+        border-radius:16px 16px 0 0 ;
+      }
+      .icon_magic{
+        background-color: #68CFC3;
+      }
+      .icon_human{
+        background-color: #8BA7D5;
+      }
+      .icon_love{
+        background-color: #DF81A2;
+      }
+      .icon_laugh{
+        background-color: #81D674;
+      }
+      .icon_horror{
+        background-color: #666;
+      }
+      .title a{
+              background: none;
+              padding: 0;
+      }
       .title a:hover{
-        cursor:pointer;
+              cursor:pointer;
       }  
     </style>
 
