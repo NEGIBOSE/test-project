@@ -685,14 +685,14 @@ main {
     flex-direction: column;
 }
 .bg_red {
-    background: #eed3d9;
+    background: #EAB0D2;
 }
 .bg_red a {
   background-color: #e74c3c;
 }
 
 .bg_yellow {
-    background: #f5e8dd;
+    background: #FFF8B6;
 }
 .bg_yellow a {
   background-color: #f1c40f;
@@ -706,14 +706,14 @@ main {
 }
 
 .bg_blue {
-  background: #eed3d9;
+  background: #A8D4EA;
 }
 .bg_blue a{
   background-color: #3399FF;
 }
 
 .bg_green {
-  background: #ccd3ca;
+  background: #FFF8B6;
 }
 .bg_green a{
   background-color: #007700;
