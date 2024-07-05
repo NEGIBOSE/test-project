@@ -688,14 +688,14 @@ main {
     background: #EAB0D2;
 }
 .bg_red a {
-  background-color: #e74c3c;
+  background-color: #B61972;
 }
 
 .bg_yellow {
     background: #FFF8B6;
 }
 .bg_yellow a {
-  background-color: #f1c40f;
+  background-color: #FFE600;
 }
 
 .bg_gray {
@@ -709,14 +709,14 @@ main {
   background: #A8D4EA;
 }
 .bg_blue a{
-  background-color: #3399FF;
+  background-color: #007AB7;
 }
 
 .bg_green {
   background: #FFF8B6;
 }
 .bg_green a{
-  background-color: #007700;
+  background-color: #A4C520;
 }
 
 .bg_white{
