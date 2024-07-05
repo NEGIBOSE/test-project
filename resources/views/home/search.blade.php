@@ -11,8 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- CSSファイルの読み込み -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
       body {
@@ -158,25 +156,23 @@
               cursor:pointer;
       }  
     </style>
-
   </head>
   <body>
-  <header class="header bg_red">
-  <div class="title">
+    <header class="header bg_red">
+      <div class="title">
         <a href="{{ route('home.index') }}">
-            <img src="/images/chara_logo.png" alt="png Image">
+          <img src="/images/chara_logo.png" alt="png Image">
         </a>
-    </div>
-    <div class="logout">
+      </div>
+      <div class="logout">
         <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
-                
-            </button>
+          @csrf
+          <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+          </button>
         </form>
-    </div>
-  </header>
+      </div>
+    </header>
     <main class="search bg_red">
       <div class="search_upper">
         <div class="reading_search">
@@ -265,7 +261,6 @@
               </a>
             </li>
           </ul>
-
           <div class="tab-content" id="tab1">
             <ul class="tab-content_big icon_magic">
               <li>
@@ -376,171 +371,168 @@
       </div>
     </main>
     <footer>&copy; 2024 My portfolio</footer>
-    <!-- JavaScriptファイルの読み込み -->
     <script>
       // 選択された本の画像URLを保持する変数
-let selectedImageUrl;
+      let selectedImageUrl;
 
-// 書籍を検索する関数
-function searchBooks() {
-  const searchTerm = document.getElementById("searchTerm").value;
-  const url = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm; // Google Books APIを使用
+      // 書籍を検索する関数
+      function searchBooks() {
+        const searchTerm = document.getElementById("searchTerm").value;
+        const url = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm; // Google Books APIを使用
 
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      const results = data.items; // 検索結果を results 変数に設定する
-      displayResults(results); // displayResults 関数を呼び出して結果を表示する
-    })
-    .catch((error) => console.error("Error:", error));
-}
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            const results = data.items; // 検索結果を results 変数に設定する
+            displayResults(results); // displayResults 関数を呼び出して結果を表示する
+          })
+          .catch((error) => console.error("Error:", error));
+      }
 
-// 書籍の検索結果を表示する関数
-function displayResults(results) {
-  const container = document.getElementById("searchResults");
-  container.innerHTML = ""; // 検索結果をクリア
+      // 書籍の検索結果を表示する関数
+      function displayResults(results) {
+        const container = document.getElementById("searchResults");
+        container.innerHTML = ""; // 検索結果をクリア
 
-  if (results && results.length > 0) {
-    const ul = document.createElement("ul");
-    for (let i = 0; i < results.length; i++) {
-      const volumeInfo = results[i].volumeInfo;
-      const title = volumeInfo.title;
-      const authors = volumeInfo.authors
-        ? volumeInfo.authors.join(", ")
-        : "不明";
-      const year = volumeInfo.publishedDate
-        ? volumeInfo.publishedDate.substr(0, 4)
-        : "不明";
-      const thumbnail = volumeInfo.imageLinks
-        ? volumeInfo.imageLinks.thumbnail
-        : "";
+        if (results && results.length > 0) {
+          const ul = document.createElement("ul");
+          for (let i = 0; i < results.length; i++) {
+            const volumeInfo = results[i].volumeInfo;
+            const title = volumeInfo.title;
+            const authors = volumeInfo.authors
+              ? volumeInfo.authors.join(", ")
+              : "不明";
+            const year = volumeInfo.publishedDate
+              ? volumeInfo.publishedDate.substr(0, 4)
+              : "不明";
+            const thumbnail = volumeInfo.imageLinks
+              ? volumeInfo.imageLinks.thumbnail
+              : "";
 
-      const li = document.createElement("li");
-      li.style.display = "flex"; // リストアイテムをフレックスボックスに設定
-      li.style.alignItems = "center"; // アイテムを中央に配置
+            const li = document.createElement("li");
+            li.style.display = "flex"; // リストアイテムをフレックスボックスに設定
+            li.style.alignItems = "center"; // アイテムを中央に配置
 
-      // サムネイル画像を表示
-      const img = document.createElement("img");
-      img.src = thumbnail;
-      img.style.marginRight = "10px"; // 画像の右側に余白を設定
-      li.appendChild(img);
+            // サムネイル画像を表示
+            const img = document.createElement("img");
+            img.src = thumbnail;
+            img.style.marginRight = "10px"; // 画像の右側に余白を設定
+            li.appendChild(img);
 
-      // タイトルと著者と年のテキストを追加
-      const text = document.createTextNode(
-        title + " /著 " + authors + " / " + year + "年"
-      );
-      li.appendChild(text);
+            // タイトルと著者と年のテキストを追加
+            const text = document.createTextNode(
+              title + " /著 " + authors + " / " + year + "年"
+            );
+            li.appendChild(text);
 
-      // クリックイベントのハンドラをラップしてthumbnailを渡す
-      li.addEventListener("click", createClickHandler(thumbnail, title));
+            // クリックイベントのハンドラをラップしてthumbnailを渡す
+            li.addEventListener("click", createClickHandler(thumbnail, title));
 
-      ul.appendChild(li);
-    }
-    container.appendChild(ul);
-  } else {
-    container.innerHTML = "<p>No results found</p>";
-  }
-}
-
-// クリックイベントのハンドラを作成する関数
-function createClickHandler(thumbnail, title) {
-  return function () {
-    const selectedTitle = title; // タイトルを取得
-    document.getElementById("searchTerm").value = selectedTitle;
-    // 選択されたタイトルを検索ボックスに自動で入れる
-    selectedImageUrl = thumbnail; // 選択された本の画像URLを保持する
-    sessionStorage.setItem("selectedTitle", selectedTitle); // タイトルをセッションストレージに保存
-    sessionStorage.setItem("selectedImageUrl", selectedImageUrl); // 画像URLをセッションストレージに保存
-
-    // ページ遷移せずに画像URLをregister.htmlに表示させる
-    const registerImage = document.getElementById("registerImage");
-    if (registerImage) {
-      registerImage.src = selectedImageUrl;
-    }
-
-    // reading.htmlにも画像URLを引き渡す
-    const readingImage = document.getElementById("readingImage");
-    if (readingImage) {
-      readingImage.src = selectedImageUrl;
-    }
-
-  };
-}
-
-
-// タブの作成
-document.addEventListener("DOMContentLoaded", function () {
-  // タブのリンクを取得
-  var tabLinks = document.querySelectorAll(".tab-links li a");
-
-  // タブのコンテンツを取得
-  var tabContents = document.querySelectorAll(".tab-content");
-
-  // タブリンクにイベントリスナーを追加
-  tabLinks.forEach(function (tabLink) {
-    tabLink.addEventListener("click", function (event) {
-      event.preventDefault(); // デフォルトのリンク動作を無効化
-
-      // タブの表示を切り替える
-      var targetTabId = this.getAttribute("href").substring(1);
-      tabContents.forEach(function (tabContent) {
-        if (tabContent.id === targetTabId) {
-          tabContent.classList.add("active");
+            ul.appendChild(li);
+          }
+          container.appendChild(ul);
         } else {
-          tabContent.classList.remove("active");
+          container.innerHTML = "<p>No results found</p>";
         }
+      }
+
+      // クリックイベントのハンドラを作成する関数
+      function createClickHandler(thumbnail, title) {
+        return function () {
+          const selectedTitle = title; // タイトルを取得
+          document.getElementById("searchTerm").value = selectedTitle;
+          // 選択されたタイトルを検索ボックスに自動で入れる
+          selectedImageUrl = thumbnail; // 選択された本の画像URLを保持する
+          sessionStorage.setItem("selectedTitle", selectedTitle); // タイトルをセッションストレージに保存
+          sessionStorage.setItem("selectedImageUrl", selectedImageUrl); // 画像URLをセッションストレージに保存
+
+          // ページ遷移せずに画像URLをregister.htmlに表示させる
+          const registerImage = document.getElementById("registerImage");
+          if (registerImage) {
+            registerImage.src = selectedImageUrl;
+          }
+
+          // reading.htmlにも画像URLを引き渡す
+          const readingImage = document.getElementById("readingImage");
+          if (readingImage) {
+            readingImage.src = selectedImageUrl;
+          }
+        };
+      }
+
+      // タブの作成
+      document.addEventListener("DOMContentLoaded", function () {
+        // タブのリンクを取得
+        var tabLinks = document.querySelectorAll(".tab-links li a");
+
+        // タブのコンテンツを取得
+        var tabContents = document.querySelectorAll(".tab-content");
+
+        // タブリンクにイベントリスナーを追加
+        tabLinks.forEach(function (tabLink) {
+          tabLink.addEventListener("click", function (event) {
+            event.preventDefault(); // デフォルトのリンク動作を無効化
+
+            // タブの表示を切り替える
+            var targetTabId = this.getAttribute("href").substring(1);
+            tabContents.forEach(function (tabContent) {
+              if (tabContent.id === targetTabId) {
+                tabContent.classList.add("active");
+              } else {
+                tabContent.classList.remove("active");
+              }
+            });
+
+            // タブの選択状態を切り替える
+            tabLinks.forEach(function (link) {
+              link.classList.remove("active");
+            });
+            this.classList.add("active");
+          });
+        });
       });
 
-      // タブの選択状態を切り替える
-      tabLinks.forEach(function (link) {
-        link.classList.remove("active");
+      // カテゴリーを処理する関数
+      function processCategory(category) {
+        switch (category) {
+          case "magic":
+            return "SFを選択しました";
+          case "human":
+            return "ノンフィクションを選択しました";
+          case "love":
+            return "ラブを選択しました";
+          case "comedy":
+            return "コメディを選択しました";
+          case "horror":
+            return "ホラーを選択しました";
+          default:
+            return "選択されませんでした";
+        }
+      }
+
+      // ページの読み込みが完了したときに実行
+      document.addEventListener("DOMContentLoaded", function () {
+        // カテゴリーアイコンの要素を取得
+        var categoryIcons = document.querySelectorAll(".category-icon");
+
+        // 各カテゴリーアイコンがクリックされたときのイベントリスナーを追加
+        categoryIcons.forEach(function (icon) {
+          icon.addEventListener("click", function (event) {
+            // デフォルトの動作を無効化
+            event.preventDefault();
+
+            // 関連するカテゴリーを取得
+            var category = this.getAttribute("data-category");
+
+            // クリックされたアイコンのSVG要素の内容を取得してセッションストレージに保存
+            var svgContent = this.querySelector("svg").outerHTML;
+            sessionStorage.setItem("selectedIcon", svgContent);
+
+            // 選択されたカテゴリーを処理する関数を呼び出し、結果をalertで表示する
+            alert(processCategory(category));
+          });
+        });
       });
-      this.classList.add("active");
-    });
-  });
-});
-// カテゴリーを処理する関数
-function processCategory(category) {
-  switch (category) {
-    case "magic":
-      return "SFを選択しました";
-    case "human":
-      return "ノンフィクションを選択しました";
-    case "love":
-      return "ラブを選択しました";
-    case "comedy":
-      return "コメディを選択しました";
-    case "horror":
-      return "ホラーを選択しました";
-    default:
-      return "選択されませんでした";
-  }
-}
-
-// ページの読み込みが完了したときに実行
-document.addEventListener("DOMContentLoaded", function () {
-  // カテゴリーアイコンの要素を取得
-  var categoryIcons = document.querySelectorAll(".category-icon");
-
-  // 各カテゴリーアイコンがクリックされたときのイベントリスナーを追加
-  categoryIcons.forEach(function (icon) {
-    icon.addEventListener("click", function (event) {
-      // デフォルトの動作を無効化
-      event.preventDefault();
-
-      // 関連するカテゴリーを取得
-      var category = this.getAttribute("data-category");
-
-      // クリックされたアイコンのSVG要素の内容を取得してセッションストレージに保存
-      var svgContent = this.querySelector("svg").outerHTML;
-      sessionStorage.setItem("selectedIcon", svgContent);
-
-      // 選択されたカテゴリーを処理する関数を呼び出し、結果をalertで表示する
-      alert(processCategory(category));
-    });
-  });
-});
-
     </script>
     <script
       defer
