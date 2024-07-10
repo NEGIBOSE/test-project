@@ -45,6 +45,7 @@
       }
       .search_input input {
         width: 72%;
+        padding: 8px 16px;
         background: #d9d9d9;
         border: 0.5px #000 solid;
         border-radius:8px;
