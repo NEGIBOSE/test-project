@@ -46,12 +46,13 @@
       .search_input input {
         width: 72%;
         background: #d9d9d9;
-        border: 0px;
-        text-align: left;
+        border: 0.5px #000 solid;
+        border-radius:8px;
       }
       .search_input button {
         width: 28%;
-        border: 0;
+        border: 0.5px #000 solid;
+        border-radius:8px;
       }
       .search_input button:hover {
         cursor:pointer;
@@ -65,10 +66,13 @@
         margin: 8px;
         padding: 0 4px;
         overflow-y: auto;
+        border: 0.5px #000 solid;
+
+        border-radius:8px;
       }
       .searchResults li {
         border-bottom: 1px solid #333;
-        padding: 4px;
+        padding: 16px  8px;
         margin: 0 4px;
       }
       .searchResults li:hover{
