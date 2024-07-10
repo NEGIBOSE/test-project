@@ -78,7 +78,14 @@
             }
             .title a:hover{
                 cursor:pointer;
-            }   
+            }
+            .mini_title{
+                padding:8px;
+                margin-bottom:0px;
+            }
+            .home_select_u{
+                align-items:center;
+            }
         </style>
     </head>
     <body>

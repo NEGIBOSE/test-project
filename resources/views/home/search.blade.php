@@ -67,7 +67,6 @@
         padding: 0 4px;
         overflow-y: auto;
         border: 0.5px #000 solid;
-
         border-radius:8px;
       }
       .searchResults li {
