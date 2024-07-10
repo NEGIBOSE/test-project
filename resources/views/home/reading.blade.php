@@ -18,9 +18,8 @@
       .reading {
         position: relative;
       }
-
       .logout button{
-        background-color:#e74c3c;
+        background-color:rgb(255, 127, 191);
       }
       #comment {
         display: none; /* 初期状態では非表示に設定 */
@@ -31,6 +30,7 @@
       .reading .mini_title p {
         background: none;
       }
+
       /* コメントが徐々に現れるアニメーションの定義 */
       @keyframes fadeIn {
         0% {
@@ -58,8 +58,7 @@
         width: 92%;
         border-radius: 16px;
         overflow: hidden;
-        box-shadow:0px 0px 8px 2px rgba(255, 255, 255, 1), 0px 0px 8px 6px rgba(0, 0, 0, 1);
-        transition: transform 0.3s, box-shadow 0.3s;
+        border:1px #fff solid;
       }
       .reading_girl img {
         width: 100%;
@@ -95,6 +94,9 @@
       }
       .title a:hover{
         cursor:pointer;
+      }
+      .select_text{
+        border:none;
       }
     </style>
   </head>

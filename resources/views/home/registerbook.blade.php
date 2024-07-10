@@ -40,15 +40,15 @@
                 width: 50%;
                 text-align: center;
                 font-size: 24px;
-                margin: 4px;
+                margin: 8px;
                 color: #333;
+                border:1px #666666 solid;
                 border-radius: 16px;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
             .select_yes form {
                 text-align: center;
                 font-size: 24px;
-                margin: 4px;
                 color: #333;
                 border-radius: 16px;
                 display: flex;
@@ -58,7 +58,8 @@
             .select_yes button {
                 background-color: rgb(255, 127, 191);
                 display: inline-block;
-                padding: 10px 20px;
+                padding: 8px 16px;
+                margin: 16px;
                 border: none;
                 font-size: 16px;
                 font-weight: bold;
