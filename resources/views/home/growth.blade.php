@@ -17,8 +17,7 @@
         background-color: #A4C520;
       }
       .growth_middle{
-        width: 97%;
-        margin: 24px 0 16px 0;
+        margin: 24px 16px 16px;
         padding: 8px;
         height: 100vh;
         overflow:auto;
