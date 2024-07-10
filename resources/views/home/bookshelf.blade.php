@@ -19,6 +19,10 @@
           display: flex;
           margin-top:16px;
         }
+        .search_input .select_text{
+          border-radius:8px;
+          border:0.5px #000 solid;
+        }
         .search_input input {
           width: 70%;
         }
