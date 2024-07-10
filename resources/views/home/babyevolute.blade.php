@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
         .logout button{
-            background-color:#e74c3c;
+            background-color:rgb(255, 127, 191);
         }
         .reading {
             position: relative;
@@ -60,8 +60,7 @@
             margin-top: -16px; /* 上方に16px移動 */
             border-radius: 16px;
             overflow: hidden;
-            box-shadow:0px 0px 8px 2px rgba(255, 255, 255, 1), 0px 0px 8px 6px rgba(0, 0, 0, 1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border:1px #fff solid;
         }
 
         .reading_girl img {

@@ -22,6 +22,7 @@
         .search_input .select_text{
           border-radius:8px;
           border:0.5px #000 solid;
+          padding: 8px 16px;
         }
         .search_input input {
           width: 70%;
