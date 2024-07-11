@@ -18,7 +18,7 @@
       }
       .growth_middle{
         margin: 24px 16px 16px;
-        padding: 8px;
+        padding: 16px;
         height: 100vh;
         overflow:auto;
         border-radius:8px;
@@ -28,7 +28,7 @@
         flex-wrap: wrap; /* コンテンツが折り返されるように設定 */
       }
       .growth_cont {
-        margin: 5px; /* コンテンツの間隔を設定 */
+        margin: 8px; /* コンテンツの間隔を設定 */
         box-sizing: border-box; /* マージンやパディングを含めた全体の幅を計算する */
       }
       .growth_bottom {

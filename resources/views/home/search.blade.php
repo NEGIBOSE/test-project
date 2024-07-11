@@ -46,7 +46,7 @@
       .search_input input {
         width: 72%;
         padding: 8px 16px;
-        background: #d9d9d9;
+        background: #f5f5f5;
         border: 0.5px #000 solid;
         border-radius:8px;
       }
@@ -63,7 +63,7 @@
       }
       .searchResults ul {
         height: 24vh; /* 例えば高さを200pxに固定 */
-        background: #d9d9d9;
+        background: #f5f5f5;
         margin: 8px;
         padding: 0 4px;
         overflow-y: auto;
@@ -188,7 +188,7 @@
               type="text"
               id="searchTerm"
               placeholder="Search for a book..."
-              class="select_text"
+              class="select_text bg_gray"
             />
             <button onclick="searchBooks()" class="select_text">Search</button>
           </div>
