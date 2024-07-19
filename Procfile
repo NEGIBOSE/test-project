@@ -1,2 +1,2 @@
 release: php artisan migrate --force
-web: npm run preview
+web: PORT=$PORT npm run preview
