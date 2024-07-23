@@ -11,11 +11,12 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        outDir: 'public/build',
+        assetsDir: 'assets',
+    },
     server: {
         port: process.env.PORT || 3000,
         host: '0.0.0.0'
-    },
-    build: {
-        outDir: 'public/build',
-    },
+    }
 });
