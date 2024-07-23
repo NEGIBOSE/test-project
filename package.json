@@ -8,6 +8,7 @@
       "build": "vite build",
       "preview": "vite preview --port $PORT",
       "production": "vite build",
+      "start": "vite preview --port $PORT",
       "heroku-postbuild": "npm run production"
   },
   "devDependencies": {
