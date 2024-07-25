@@ -3,21 +3,34 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Home\IndexController;
+use App\Http\Controllers\IllustrationController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\Home\SearchController;
+use App\Http\Controllers\Home\RegisterbookController;
+use App\Http\Controllers\Home\BabyEvoluteController;
+use App\Http\Controllers\Home\AdultEvoluteController;
+use App\Http\Controllers\Home\ShareController;
+use App\Http\Controllers\Home\GrowthController;
+use App\Http\Controllers\Home\TestalgoController;
+
+// 最初の画面をログイン画面に設定
+Route::get('/', function () {
+    return view('welcome');
+})->name('login');
 
 // save-image
-use App\Http\Controllers\IllustrationController;
 Route::get('post/save-image', [IllustrationController::class, 'createImageUrl']);
 Route::post('post/save-image', [IllustrationController::class, 'storeImageUrl'])
     ->name('image.store');
 
 // save-book
-use App\Http\Controllers\BookController;
 Route::get('post/save-book', [BookController::class, 'create']);
 Route::post('post/save-book', [BookController::class, 'store'])
     ->name('book.store');
 
 // save-category
-use App\Http\Controllers\CategoryController;
 Route::get('post/save-category', [CategoryController::class, 'create']);
 Route::post('post/save-category', [CategoryController::class, 'store'])
     ->name('category.store');
@@ -27,16 +40,10 @@ Route::get('home/bookshelf', [BookController::class, 'index'])->name('home.books
 Route::get('/search-books', [BookController::class, 'searchBooks'])->name('books.search');
 
 // post
-use App\Http\Controllers\PostController;
 Route::get('post/create', [PostController::class, 'create']);
 Route::post('post', [PostController::class, 'store'])
     ->name('post.store');
 Route::get('post', [PostController::class, 'index']);
-
-// 最初の画面をログイン画面に設定
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome'); // 名前を 'welcome' に変更
 
 // test
 Route::get('/test', [TestController::class, 'test'])->name('test');
@@ -64,13 +71,13 @@ Route::get('language/{locale}', function ($locale) {
 
 // home関連のルート設定
 Route::get('/home', [IndexController::class, 'index'])->name('home.index');
-Route::get('/home/search', \App\Http\Controllers\Home\SearchController::class)->name('home.search');
-Route::get('/home/registerbook', \App\Http\Controllers\Home\RegisterbookController::class)->name('home.registerbook');
+Route::get('/home/search', [SearchController::class, 'index'])->name('home.search');
+Route::get('/home/registerbook', [RegisterbookController::class, 'index'])->name('home.registerbook');
 Route::get('/home/reading', [CategoryController::class, 'showCategoryCount'])->name('home.reading');
-Route::get('/home/babyevolute', \App\Http\Controllers\Home\BabyEvoluteController::class)->name('home.babyevolute');
-Route::get('/home/adultevolute', \App\Http\Controllers\Home\AdultEvoluteController::class)->name('home.adultevolute');
-Route::get('/home/share', \App\Http\Controllers\Home\ShareController::class)->name('home.share');
-Route::get('/home/growth', \App\Http\Controllers\Home\GrowthController::class)->name('home.growth');
-Route::get('/home/testalgo', \App\Http\Controllers\Home\TestalgoController::class)->name('home.testalgo');
+Route::get('/home/babyevolute', [BabyEvoluteController::class, 'index'])->name('home.babyevolute');
+Route::get('/home/adultevolute', [AdultEvoluteController::class, 'index'])->name('home.adultevolute');
+Route::get('/home/share', [ShareController::class, 'index'])->name('home.share');
+Route::get('/home/growth', [GrowthController::class, 'index'])->name('home.growth');
+Route::get('/home/testalgo', [TestalgoController::class, 'index'])->name('home.testalgo');
 Route::post('/store', [TestalgoController::class, 'store']);
 Route::get('/get-image', [TestalgoController::class, 'getImage']);
