@@ -8,19 +8,19 @@ use App\Http\Controllers\Home\IndexController;
 use App\Http\Controllers\IllustrationController;
 Route::get('post/save-image', [IllustrationController::class, 'createImageUrl']);
 Route::post('post/save-image', [IllustrationController::class, 'storeImageUrl'])
-->name('image.store');
+    ->name('image.store');
 
 //save-book
 use App\Http\Controllers\BookController;
 Route::get('post/save-book', [BookController::class, 'create']);
 Route::post('post/save-book', [BookController::class, 'store'])
-->name('book.store');
+    ->name('book.store');
 
 //save-category
 use App\Http\Controllers\CategoryController;
 Route::get('post/save-category', [CategoryController::class, 'create']);
 Route::post('post/save-category', [CategoryController::class, 'store'])
-->name('category.store');
+    ->name('category.store');
 
 //bookshelf表示
 Route::get('home/bookshelf', [BookController::class, 'index'])->name('home.bookshelf');
@@ -30,23 +30,26 @@ Route::get('/search-books', [BookController::class, 'searchBooks'])->name('books
 use App\Http\Controllers\PostController;
 Route::get('post/create', [PostController::class, 'create']);
 Route::post('post', [PostController::class, 'store'])
-->name('post.store');
+    ->name('post.store');
 Route::get('post', [PostController::class, 'index']);
-Route::get('/', function () {
-    return view('welcome');
-})->name('home'); // 名前付きルートの定義
+
+// ここを修正
+Route::get('/', [IndexController::class, 'index'])->name('home.index');
 
 //test
 Route::get('/test', [TestController::class, 'test'])->name('test');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 require __DIR__.'/auth.php';
+
 // Language Switcher Route 言語切替用ルートだよ
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
@@ -61,11 +64,11 @@ Route::get('/home', function () {
 
 //ホーム
 Route::get('/home', \App\Http\Controllers\Home\IndexController::class)
-->name('home.index');
+    ->name('home.index');
 
 //検索
 Route::get('/home/search', \App\Http\Controllers\Home\SearchController::class)
-->name('home.search');
+    ->name('home.search');
 
 //登録
 Route::get('/home/registerbook', \App\Http\Controllers\Home\RegisterbookController::class)
@@ -73,27 +76,27 @@ Route::get('/home/registerbook', \App\Http\Controllers\Home\RegisterbookControll
 
 //読み聞かせ中
 Route::get('/home/reading', [CategoryController::class, 'showCategoryCount'])
-->name('home.reading');
+    ->name('home.reading');
 
 //第一進化
 Route::get('/home/babyevolute', \App\Http\Controllers\Home\BabyEvoluteController::class)
-->name('home.babyevolute');
+    ->name('home.babyevolute');
 
 //第二進化
 Route::get('/home/adultevolute', \App\Http\Controllers\Home\AdultEvoluteController::class)
-->name('home.adultevolute');
+    ->name('home.adultevolute');
 
 //共有
 Route::get('/home/share', \App\Http\Controllers\Home\ShareController::class)
-->name('home.share');
+    ->name('home.share');
 
 //成長記録
 Route::get('/home/growth', \App\Http\Controllers\Home\GrowthController::class)
-->name('home.growth');
+    ->name('home.growth');
 
 //algorithm test
 use App\Http\Controllers\Home\TestalgoController;
 Route::get('/home/testalgo', \App\Http\Controllers\Home\TestalgoController::class)
-->name('home.testalgo');
+    ->name('home.testalgo');
 Route::post('/store', [TestalgoController::class, 'store']); // POSTリクエストを処理するルート
 Route::get('/get-image', [TestalgoController::class, 'getImage']); // GETリクエストを処理するルート
