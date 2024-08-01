@@ -10,25 +10,19 @@
 
 
 # URL
-[http://the-view.work/](https://www.youtube.com/watch?v=PrFkiPA7CAg) <br >
-画面中部のゲストログインボタンから、メールアドレスとパスワードを入力せずにログインできます。
+[http://character-books-test/](https://www.youtube.com/watch?v=PrFkiPA7CAg) <br >
+作成中なので、ローカル環境での動作確認動画です。
 
 # 使用技術
-- Ruby 2.5.7
-- Ruby on Rails 5.2.4
-- MySQL 5.7
-- Nginx
-- Puma
-- AWS
-  - VPC
-  - EC2
-  - RDS
-  - Route53
-- Docker/Docker-compose
-- CircleCi CI/CD
-- Capistrano3
-- RSpec
-- Google Maps API
+- Laravel Framework 11.3.1
+    - PHP 8.3.6
+    - node 22.2.0
+    - npm 10.7.0
+    - composer 2.7.2
+- MAMP 6.9
+    -　Apache 2.4.58 
+    - MySQL 8.3.0
+
 
 # AWS構成図
 <img width="995" alt="スクリーンショット 2020-05-07 11 14 01" src="https://user-images.githubusercontent.com/60876388/81247155-3ccde300-9054-11ea-91eb-d06eb38a63b3.png">
