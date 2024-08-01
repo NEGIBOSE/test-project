@@ -1,6 +1,8 @@
 <h1>CHARACTER-BOOKS</h1>
 <p>読書歴からキャラクターを生み出すアプリです。<p>
 <p>Google Books API使用しています。<p>
+<img width="500" alt="スクリーンショット 2024-07-10 17 12 11" src="https://github.com/user-attachments/assets/577f4413-333b-4192-acf6-caf84779d981">
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
