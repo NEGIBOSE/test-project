@@ -3,12 +3,14 @@
  旅行先の景色や好きな景色を位置情報付きで共有できます。 <br >
  レスポンシブ対応しているのでスマホからもご確認いただけます。
 
-<img width="350" alt="スクリーンショット 2024-07-10 17 12 11" src="https://github.com/user-attachments/assets/962ce23f-e1e6-4c9e-be70-ac5ec09d0df4"><br >
-<img width="350" alt="スクリーンショット 2024-07-11 18 45 38" src="https://github.com/user-attachments/assets/20042b67-9951-4b60-883b-975aec0099db"><br >
-<img width="350" alt="スクリーンショット 2024-07-10 17 13 54" src="https://github.com/user-attachments/assets/7d0ac52d-0c21-42dd-8f5e-49b57273afdf">
+<img width="350" height="700" alt="スクリーンショット 2024-07-10 17 12 11" src="https://github.com/user-attachments/assets/962ce23f-e1e6-4c9e-be70-ac5ec09d0df4">
+<img width="350" height="700" alt="スクリーンショット 2024-07-11 18 45 38" src="https://github.com/user-attachments/assets/20042b67-9951-4b60-883b-975aec0099db">
+<img width="350" height="700" alt="スクリーンショット 2024-07-10 17 13 54" src="https://github.com/user-attachments/assets/7d0ac52d-0c21-42dd-8f5e-49b57273afdf">
+<img width="350" height="700" alt="スクリーンショット 2024-07-10 17 05 42" src="https://github.com/user-attachments/assets/2e2c4561-4894-4b2a-9795-b56d5cd796e8">
+
 
 # URL
-http://the-view.work/ <br >
+[http://the-view.work/](https://www.youtube.com/watch?v=PrFkiPA7CAg) <br >
 画面中部のゲストログインボタンから、メールアドレスとパスワードを入力せずにログインできます。
 
 # 使用技術
