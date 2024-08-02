@@ -1,6 +1,7 @@
 # Character-Books
- 読書歴からキャラクターを生み出すアプリです。<br >
- Google Books Apiを使用しているので、お好きな小説、マンガ、ビジネス本...etcが登録いただけます。 
+ 読書好きの人のためのWebアプリ<br >
+ 呼んだ本を記録する<br >
+   ＋遊び心でキャラクター要素（呼んだ本のジャンルに応じてキャラクターの見た目が変化します）
 
 <img width="350" height="700" alt="スクリーンショット 2024-07-10 17 12 11" src="https://github.com/user-attachments/assets/962ce23f-e1e6-4c9e-be70-ac5ec09d0df4">
 <img width="350" height="700" alt="スクリーンショット 2024-07-11 18 45 38" src="https://github.com/user-attachments/assets/20042b67-9951-4b60-883b-975aec0099db">
@@ -29,7 +30,7 @@
 # 機能一覧
 - ユーザー登録、ログイン機能
 - 検索機能
-  - Google Books Api
+  - Google Books API
 - 記録機能
   - 索引機能
   - 昇順・降順機能
