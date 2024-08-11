@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}" /> -->
-    <link rel="stylesheet" href="{{ asset('build/assets/app-DmdGSnKO.css') }}">
-    <script src="{{ asset('build/assets/app-BtUpmekk.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ secure_asset('build/assets/app-DmdGSnKO.css') }}">
 
     <style>
         .home_icon {
@@ -101,6 +100,6 @@
     </main>
     <footer>&copy; 2024 My portfolio</footer>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    @vite('resources/js/app.js')
+    <script src="{{ secure_asset('build/assets/app-BtUpmekk.js') }}" defer></script>
 </body>
 </html>
