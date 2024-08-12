@@ -17,3 +17,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+!public/build/assets/
+!public/build/assets/app-DmdGSnKO.css
+!public/build/assets/app-BtUpmekk.js
