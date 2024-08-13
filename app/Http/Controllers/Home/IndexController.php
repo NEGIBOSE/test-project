@@ -16,11 +16,8 @@ class IndexController extends Controller
         $categories = Category::all();
         $latestIllustration = Illustration::latest()->first(); // 最新の1件のIllustrationデータを取得
         
-                // Illustrationデータが存在しない場合はデフォルトの画像パスを設定
-                $defaultImage = 'images/BABY.png';
-                return view('home.index', compact('categories', 'latestIllustration', 'defaultImage'));
+        // Illustrationデータが存在しない場合はデフォルトの画像パスを設定
+        $defaultImage = 'images/BABY.png';
+        return view('home.index', compact('categories', 'latestIllustration', 'defaultImage'));
     }
-    // function index(){
-    //     return view('home'); 
-    //    }
 }
