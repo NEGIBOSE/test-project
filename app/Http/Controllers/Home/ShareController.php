@@ -10,7 +10,7 @@ class ShareController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    function index()
     {
         return view('home.share');
     }

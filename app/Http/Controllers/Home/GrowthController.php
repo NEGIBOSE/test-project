@@ -8,7 +8,7 @@ use App\Models\Illustration; // Illustrationモデルをインポート
 
 class GrowthController extends Controller
 {
-    public function __invoke(Request $request)
+    function index()
     {
         // Illustrationテーブルからすべてのデータを取得
         $illustrations = Illustration::all();

@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    <link rel="stylesheet" href="{{ secure_asset('build/assets/app-DQlHjVxY.css') }}">
     <style>
       .logout button{
         background-color: #A4C520;

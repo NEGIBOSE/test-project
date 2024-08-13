@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TestalgoController extends Controller
 {
-    public function __invoke(Request $request)
+    function index()
     {
         return view('home.testalgo');
     }
