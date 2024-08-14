@@ -12,6 +12,9 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\View\View
      */
+    public function create(){
+        return view('post.save-category');
+    }
     public function showCategoryCount()
     {
         $categoryCountMessage = $this->determineCategoryCount();
@@ -46,7 +49,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
         $request->validate([
             'selectedIcon' => 'nullable|string',
         ]);
