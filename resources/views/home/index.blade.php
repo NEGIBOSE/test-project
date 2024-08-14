@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}" /> -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <link rel="stylesheet" href="{{ secure_asset('build/assets/app-DQlHjVxY.css') }}">
 
     <style>
@@ -78,11 +78,11 @@
             <div class="home_pic chara_pic">
                 <a href="{{ route('home.growth') }}">
                     @if($latestIllustration)
-                        <img src="{{ secure_asset($latestIllustration->image_url) }}" alt="Illustration Image" />
-                        <!-- <img src="{{ asset($latestIllustration->image_url) }}" alt="Illustration Image" /> -->
+                        <!-- <img src="{{ secure_asset($latestIllustration->image_url) }}" alt="Illustration Image" /> -->
+                        <img src="{{ asset($latestIllustration->image_url) }}" alt="Illustration Image" />
                     @else
-                        <img src="{{ secure_asset($defaultImage) }}" alt="Default Image" />
-                        <!-- <img src="{{ asset($defaultImage) }}" alt="Default Image" /> -->
+                        <!-- <img src="{{ secure_asset($defaultImage) }}" alt="Default Image" /> -->
+                        <img src="{{ asset($defaultImage) }}" alt="Default Image" />
                     @endif
                 </a>
             </div>
