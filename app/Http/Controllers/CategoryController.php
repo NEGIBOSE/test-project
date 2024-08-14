@@ -46,6 +46,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         $request->validate([
             'selectedIcon' => 'nullable|string',
         ]);
