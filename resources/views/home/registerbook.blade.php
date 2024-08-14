@@ -172,28 +172,30 @@
                 var selectedIcon = sessionStorage.getItem("selectedIcon");
                 var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+                var formData = new FormData();
+                formData.append('selectedIcon', selectedIcon);
+
                 fetch("{{ route('category.store') }}", {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
                         'X-CSRF-TOKEN': csrfToken
                     },
-                    body: JSON.stringify({ selectedIcon: selectedIcon })
+                    body: formData
                 })
                 .then(response => response.json())
                 .then(categoryData => {
                     if (categoryData.category_id) {
+                        var bookFormData = new FormData();
+                        bookFormData.append('selectedImageUrl', selectedImageUrl);
+                        bookFormData.append('selectedTitle', selectedTitle);
+                        bookFormData.append('categoryId', categoryData.category_id);
+
                         fetch("{{ route('book.store') }}", {
                             method: 'POST',
                             headers: {
-                                'Content-Type': 'application/json',
                                 'X-CSRF-TOKEN': csrfToken
                             },
-                            body: JSON.stringify({
-                                selectedImageUrl: selectedImageUrl,
-                                selectedTitle: selectedTitle,
-                                categoryId: categoryData.category_id
-                            })
+                            body: bookFormData
                         })
                         .then(response => {
                             if (response.ok) {
