@@ -169,6 +169,8 @@
             </div>
         </div>
         <!-- Vite JS -->
-        @vite('resources/js/app.js')
+        <!-- @vite('resources/js/app.js') -->
+        <script src="/build/assets/app-BtUpmekk.js " type="module"></script>
+
     </body>
 </html>
