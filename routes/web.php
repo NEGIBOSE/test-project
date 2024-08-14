@@ -35,7 +35,7 @@ Route::post('post/save-book', [BookController::class, 'store'])
 
 // save-category
 Route::get('post/save-category', [CategoryController::class, 'create']);
-Route::post('post/save-category/store', [CategoryController::class, 'store'])
+Route::post('post/save-category', [CategoryController::class, 'store'])
     ->name('category.store');
 
 // bookshelf表示
