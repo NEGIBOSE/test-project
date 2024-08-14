@@ -8,13 +8,12 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Illustration; // Illustration モデルをインポート
 
-
 class IndexController extends Controller
 {
     function index()
     {
         // ここで生成されるURLを確認
-        dd(route('logout'));
+        dd(secure_url(route('logout')));
         
         $categories = Category::all();
         $latestIllustration = Illustration::latest()->first(); // 最新の1件のIllustrationデータを取得
