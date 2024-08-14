@@ -209,7 +209,7 @@
                             console.error('Error while sending selected title and image url to book.store:', error);
                         });
                     } else {
-                        console.error('Failed to send selected icon to category.store');
+                        console.error('Failed to send selected icon to category.store', error);
                     }
                 })
                 .catch(error => {
