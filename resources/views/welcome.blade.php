@@ -11,7 +11,6 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
         <!-- Vite CSS -->
-        <!-- @vite('resources/css/app.css') -->
         <link rel="stylesheet" href="{{ secure_asset('build/assets/app-DQlHjVxY.css') }}">
 
     </head>
@@ -169,7 +168,6 @@
             </div>
         </div>
         <!-- Vite JS -->
-        <!-- @vite('resources/js/app.js') -->
         <script src="/build/assets/app-BtUpmekk.js " type="module"></script>
 
     </body>
