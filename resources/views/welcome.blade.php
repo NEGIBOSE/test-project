@@ -168,7 +168,6 @@
             </div>
         </div>
         <!-- Vite JS -->
-        <script src="/build/assets/app-BtUpmekk.js " type="module"></script>
 
     </body>
 </html>
