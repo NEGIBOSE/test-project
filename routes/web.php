@@ -18,7 +18,10 @@ use App\Http\Controllers\Home\TestalgoController;
 // 最初の画面をログイン画面に設定
 Route::get('/', function () {
     return view('welcome');
-})->name('login');
+})->name('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('login');
 
 // save-image
 Route::get('post/save-image', [IllustrationController::class, 'createImageUrl']);
