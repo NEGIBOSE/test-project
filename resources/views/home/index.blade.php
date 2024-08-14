@@ -77,9 +77,11 @@
             <div class="home_pic chara_pic">
                 <a href="{{ route('home.growth') }}">
                     @if($latestIllustration)
-                        <img src="{{ asset($latestIllustration->image_url) }}" alt="Illustration Image" />
+                        <img src="{{ secure_asset($latestIllustration->image_url) }}" alt="Illustration Image" />
+                        <!-- <img src="{{ asset($latestIllustration->image_url) }}" alt="Illustration Image" /> -->
                     @else
-                        <img src="{{ asset($defaultImage) }}" alt="Default Image" />
+                        <img src="{{ secure_asset($defaultImage) }}" alt="Default Image" />
+                        <!-- <img src="{{ asset($defaultImage) }}" alt="Default Image" /> -->
                     @endif
                 </a>
             </div>
