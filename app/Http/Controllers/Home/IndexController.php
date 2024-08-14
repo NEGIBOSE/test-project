@@ -13,7 +13,7 @@ class IndexController extends Controller
     function index()
     {
         // ここで生成されるURLを確認
-        dd(secure_url(route('logout')));
+        // dd(secure_url(route('logout')));
         
         $categories = Category::all();
         $latestIllustration = Illustration::latest()->first(); // 最新の1件のIllustrationデータを取得
