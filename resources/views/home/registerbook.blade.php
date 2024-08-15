@@ -178,8 +178,13 @@
                 fetch("{{ route('category.store') }}", {
                     method: 'POST',
                     headers: {
-                        'X-CSRF-TOKEN': csrfToken
+                        'X-CSRF-TOKEN': csrfToken,  // jQueryではなく純粋なJavaScriptで取得
+                        'Content-Type': 'application/json'                    
                     },
+                    // headers: {
+                    //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                    //     'Content-Type': 'application/json'
+                    // },
                     body: formData
                 })
                 .then(response => response.json())
