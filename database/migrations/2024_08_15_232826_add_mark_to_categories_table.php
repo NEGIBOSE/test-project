@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::table('categories', function (Blueprint $table) {
-        //     $table->string('mark')->nullable();  // mark カラムを追加
-        // });
+        Schema::table('categories', function (Blueprint $table) {
+            $table->string('mark');  // mark カラムを追加
+        });
     }
 
     /**
