@@ -101,17 +101,14 @@
             .justify-end {
                 justify-content: flex-end;
             }
-            .login{
+            .register{
                 padding:160px 0;
             }
-            .login form{
+            .register form{
                 width: 96%;
                 margin: 0 auto;
             }
-            .forget_password{
-                box-shadow:none;
-            }
-            .login_button {
+            .register_button {
                 background-color: #999999;
                 border: none;
                 color: white;
@@ -122,69 +119,81 @@
                 cursor: pointer;
                 transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             }
-
-            .login_button:hover {
+            .register_button:hover {
                 background-color: #cccccc;
                 transform: translateY(-3px);
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             }
 
-            .login_button:active {
+            .register_button:active {
                 transform: translateY(-1px);
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+            .go_to_login a{
+                box-shadow:none;
             }
         </style>
     </head>
     <body>
         <header class="header bg_white">
         <div class="title">
-            <a href="{{ route('register') }}">
+            <a href="{{ route('login') }}">
                 <img src="/images/chara_logo.png" alt="png Image">
             </a>
         </div>
         </header>
-        <main class="login bg_white">
-            <form method="POST" action="{{ route('login') }}">
+        <main class="register bg_white">
+            <form method="POST" action="{{ route('register') }}">
                 @csrf
-                <!-- Email Address -->
+        
+                <!-- Name -->
                 <div>
+                    <x-input-label for="name" :value="__('Name')" />
+                    <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                </div>
+        
+                <!-- Email Address -->
+                <div class="mt-4">
                     <x-input-label for="email" :value="__('Email')" />
-                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
-                
+        
                 <!-- Password -->
                 <div class="mt-4">
                     <x-input-label for="password" :value="__('Password')" />
-                    
+        
                     <x-text-input id="password" class="block mt-1 w-full"
-                    type="password"
-                    name="password"
-                    required autocomplete="current-password" />
-                    
+                                    type="password"
+                                    name="password"
+                                    required autocomplete="new-password" />
+        
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
-                
-                <!-- Remember Me -->
-                <div class="block mt-4">
-                    <label for="remember_me" class="inline-flex items-center">
-                        <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                        <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-                    </label>
+        
+                <!-- Confirm Password -->
+                <div class="mt-4">
+                    <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+        
+                    <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                    type="password"
+                                    name="password_confirmation" required autocomplete="new-password" />
+        
+                    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
-                
-                <div class="flex items-center justify-end mt-4">
-                    @if (Route::has('password.request'))
-                    <a class="forget_password underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+        
+                <div class="go_to_login flex items-center justify-end mt-4">
+                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+                        {{ __('Already registered?') }}
                     </a>
-                    @endif
-                    
-                    <x-primary-button class="login_button ms-3">
-                        {{ __('Log in') }}
+        
+                    <x-primary-button class="register_button ms-4">
+                        {{ __('Register') }}
                     </x-primary-button>
                 </div>
             </form>
+        
             
         </main>
         <footer>&copy; 2024 My portfolio</footer>
