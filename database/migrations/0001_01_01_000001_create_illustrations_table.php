@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->string('mark');  // mark カラムを追加
+        Schema::create('illustrations', function (Blueprint $table) {
+            $table->id();
+            $table->text('image_url');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->dropColumn('mark');  // ロールバック時に mark カラムを削除
-        });
+        Schema::dropIfExists('illustrations');
     }
 };

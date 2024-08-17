@@ -11,7 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-      
+        Schema::table('categories', function (Blueprint $table) {
+            // ここで mark カラムを TEXT に変更する
+            $table->text('mark')->change();
+        });
     }
 
     /**
@@ -19,7 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        
-        //
+        Schema::table('categories', function (Blueprint $table) {
+            //
+        });
     }
 };
