@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Illustration;
+use Illuminate\Support\Facades\Auth; // Authファサードをインポート
 
 class IllustrationController extends Controller
 {
@@ -22,6 +23,10 @@ class IllustrationController extends Controller
         // Create a new illustration with the provided image URL
         $illustration = new Illustration();
         $illustration->image_url = $request->image_url;
+
+        // Set the user_id to the current authenticated user's ID
+        $illustration->user_id = Auth::id(); // Auth::id() は現在のユーザーのIDを取得します
+
         $illustration->save();
 
         return response()->json(['message' => 'Image URL stored successfully']);
