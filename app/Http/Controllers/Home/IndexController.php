@@ -15,8 +15,13 @@ class IndexController extends Controller
         // ここで生成されるURLを確認
         // dd(secure_url(route('logout')));
         
+        // ログインユーザーの取得
+        $user = auth()->user();
+
+        // ユーザーに関連する最新のIllustrationデータを取得
+        $latestIllustration = Illustration::where('user_id', $user->id)->latest()->first();
+
         $categories = Category::all();
-        $latestIllustration = Illustration::latest()->first(); // 最新の1件のIllustrationデータを取得
         
         // Illustrationデータが存在しない場合はデフォルトの画像パスを設定
         $defaultImage = 'images/BABY.png';
