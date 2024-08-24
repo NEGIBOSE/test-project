@@ -28,7 +28,15 @@ class CategoryController extends Controller
      */
     public function determineCategoryCount()
     {
-        $categoryCount = Category::count();
+        $user = auth()->user();
+
+        // デバッグ用にログを追加
+        \Log::info('User ID: ' . $user->id);
+
+        $categoryCount = Category::where('user_id', $user->id)->count();
+
+        // デバッグ用にカウント値もログに記録
+        \Log::info('Category Count: ' . $categoryCount);
 
         if ($categoryCount === 1) {
             return 'まだカテゴリーが登録されていません。(この本は初めての本です)';
@@ -40,6 +48,7 @@ class CategoryController extends Controller
             return '現在、カテゴリーは'.$categoryCount.'個登録されています。（この本で'.$categoryCount.'2冊目です）';
         }
     }
+
 
     /**
      * 新しいカテゴリーを作成する
@@ -53,10 +62,21 @@ class CategoryController extends Controller
             'selectedIcon' => 'nullable|string',
         ]);
 
+        // ユーザーを取得
+        $user = auth()->user();
+
+        // ユーザーがログインしていない場合の処理
+        if (!$user) {
+            return response()->json(['message' => 'ユーザーがログインしていません'], 403);
+        }
+
+        // カテゴリーを作成
         $category = Category::create([
             'mark' => $request->selectedIcon,
+            'user_id' => $user->id, // user_id を設定
         ]);
 
         return response()->json(['message' => 'Category saved successfully', 'category_id' => $category->id], 201);
     }
+
 }
