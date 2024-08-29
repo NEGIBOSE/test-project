@@ -174,7 +174,7 @@
         </main>
 
         <footer>
-            &copy; 2024 My Portfolio
+            &copy; 2024 My Portfolio0
         </footer>
 
         <!-- JavaScript -->
