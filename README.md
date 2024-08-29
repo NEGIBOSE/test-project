@@ -10,8 +10,7 @@
 
 
 # URL
-[http://character-books-test/](https://www.youtube.com/watch?v=PrFkiPA7CAg) <br >
-作成中なので、ローカル環境での動作確認動画です。
+   [CHARA-BOOKS](https://test-project-my-portfolio-d2ccb9ab2bc8.herokuapp.com)
 
 # 使用技術
 - Laravel Framework 11.3.1
